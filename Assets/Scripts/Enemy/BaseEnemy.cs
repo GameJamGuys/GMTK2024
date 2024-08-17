@@ -112,8 +112,13 @@ namespace Enemy
             baseEnemyTargets.SetDefaultTarget(target);
         }
 
-        private void ChangeStateToAttack()
+        private void ChangeStateToAttack(Target target)
         {
+            if (!IsChasingGamer && target.TryGetComponent(out Gamer gamer))
+            {
+                return;
+            }
+            
             StateMachine.Enter<EnemyAttackState, BaseEnemy>(this);
         }
 
