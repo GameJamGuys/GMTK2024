@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 public class Resource : MonoBehaviour
@@ -10,8 +9,8 @@ public class Resource : MonoBehaviour
     private readonly float _offsetY = 1.5f;
 
     [SerializeField] private ResourceSO _data;
-
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    
     private Rigidbody _rigidbody;
 
     private Transform _movePos;
@@ -31,7 +30,6 @@ public class Resource : MonoBehaviour
         }
 
         _rigidbody = GetComponent<Rigidbody>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.sprite = _data.Image;
     }
 
