@@ -12,7 +12,8 @@ public class ResourceSO : ScriptableObject
 
 public enum ResourceType
 {
-    Type1,
-    Type2,
-    Type3
+    Attack,
+    Support,
+    Build,
+    Heal
 }

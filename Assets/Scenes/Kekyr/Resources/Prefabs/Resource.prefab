@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71dad6945f7429242a8fa3be610ce27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: f7dd10d590ac46b4abdbd05bda39b4dd, type: 2}
+  _data: {fileID: 0}
+  _offsetY: 1.5
 --- !u!54 &542843404185752651
 Rigidbody:
   m_ObjectHideFlags: 0
