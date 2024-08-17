@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5434169000167059713}
   - component: {fileID: 2989847563333396864}
   - component: {fileID: 8450202295206067154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
-  m_Height: 3
+  m_Radius: 8
+  m_Height: 8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8450202295206067154
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 6325359164002056840}
   - component: {fileID: 4094521813484832834}
   - component: {fileID: 2917473089558019762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TargetsCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2917473089558019762
 MonoBehaviour:
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
   - component: {fileID: 7429098012566454289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CucumberEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3667853387663141634}
   - component: {fileID: 64544215940112628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
