@@ -273,7 +273,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &823990513373347442
 MonoBehaviour:
@@ -292,5 +292,6 @@ MonoBehaviour:
   <CheckTargetDistance>k__BackingField: 10
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 10
+  <IsChasingGamer>k__BackingField: 1
   baseEnemyAttack: {fileID: 8450202295206067154}
   baseEnemyTargets: {fileID: 2917473089558019762}

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Damage;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Enemy
         [field:SerializeField] public float CheckTargetDistance {get; protected set;}
         [field:SerializeField] public float AttackSpeed {get; protected set;}
         [field:SerializeField] public float AttackDamage {get; protected set;}
+        [field:SerializeField] public bool IsChasingGamer {get; protected set;}
 
         [SerializeField] public BaseEnemyAttack baseEnemyAttack;
         [SerializeField] public BaseEnemyTargets baseEnemyTargets;
@@ -19,7 +21,7 @@ namespace Enemy
         protected EnemyStateMachine StateMachine;
         // todo заменить на позицию башни
         protected Rigidbody Rigidbody;
-        protected abstract void Attack(Target target);
+        protected abstract void Attack(List<Target> targets);
         
         private bool isMoving = false;
         private bool isAttacking = false;
@@ -50,14 +52,25 @@ namespace Enemy
 
         private void TargetEnter(Target target)
         {
-            if (chaisingTarget == null)
+            bool isGamer = target.TryGetComponent(out Gamer gamer);
+            if (IsChasingGamer)
             {
-                chaisingTarget = target;
-            }
+                if (isGamer)
+                {
+                    chaisingTarget = target;
+                }
 
-            if (target.TryGetComponent(out Gamer gamer))
+                if (chaisingTarget == null)
+                {
+                    chaisingTarget = target;
+                }
+            }
+            else
             {
-                chaisingTarget = target;
+                if (!isGamer && chaisingTarget == null)
+                {
+                    chaisingTarget = target;
+                }
             }
         }
 
@@ -110,14 +123,14 @@ namespace Enemy
             {
                 yield return new WaitForSeconds(AttackSpeed);
 
-                if (baseEnemyAttack.Target != null)
-                {
-                    Attack(baseEnemyAttack.Target);
-                }
-                else
+                Attack(baseEnemyAttack.Targets);
+
+                if (baseEnemyAttack.Targets.Count == 0)
                 {
                     StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
                 }
+
+                yield return null;
             }
         }
 
