@@ -7,7 +7,7 @@ namespace Enemy
 {
     public class BaseEnemyAttack : MonoBehaviour
     {
-        public event Action OnTargetCollision;
+        public event Action<Target> OnTargetCollision;
 
         public List<Target> Targets { get; private set; } = new();
 
@@ -16,7 +16,7 @@ namespace Enemy
             if (collider.TryGetComponent( out Target target) && !Targets.Contains(target))
             {
                 Targets.Add(target);
-                OnTargetCollision?.Invoke();
+                OnTargetCollision?.Invoke(target);
             }
         }
         

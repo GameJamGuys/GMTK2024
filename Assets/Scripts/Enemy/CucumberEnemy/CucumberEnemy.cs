@@ -15,7 +15,7 @@ namespace Enemy
                 return;
             }
             
-            Instantiate(bulletPrefab, transform.position, Quaternion.identity).StartMove(AttackDamage, 3f, targets[0].transform.position);
+            Instantiate(bulletPrefab, transform.position, Quaternion.identity).StartMove(AttackDamage, 9f, targets[0].transform.position);
         }
     }
 }
