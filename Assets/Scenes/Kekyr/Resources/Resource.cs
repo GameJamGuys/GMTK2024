@@ -8,7 +8,8 @@ using UnityEngine;
 public class Resource : MonoBehaviour
 {
     [SerializeField] private ResourceSO _data;
-    
+    [SerializeField] private float _offsetY;
+
     private SpriteRenderer _spriteRenderer;
     private Rigidbody _rigidbody;
 
@@ -26,14 +27,14 @@ public class Resource : MonoBehaviour
         _spriteRenderer.sprite = _data.Image;
     }
 
-    public IEnumerator MoveTo(Transform target)
+    public IEnumerator MoveTo(Harvester harvester)
     {
         while (enabled)
         {
-            _rigidbody.MovePosition(target.position);
+            Vector3 finalTarget = new Vector3(harvester.transform.position.x, harvester.transform.position.y + _offsetY, harvester.transform.position.z);
+            Vector3 direction = (finalTarget - transform.position).normalized;
+            _rigidbody.AddForce(direction * harvester.MoveForce);
             yield return null;
         }
     }
-    
-    
 }

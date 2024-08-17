@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Damage;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(SphereCollider))]
 public class Gamer : Target
 {
     public static Gamer Instance { get; private set; }
@@ -29,8 +29,7 @@ public class Gamer : Target
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
-    private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
-    private ColliderEventHandler _colliderEventHandler;
+
 
     private void OnEnable()
     {
@@ -38,10 +37,8 @@ public class Gamer : Target
         {
             throw new ArgumentNullException(nameof(gameInput));
         }
-
-        _colliderEventHandler = GetComponentInChildren<ColliderEventHandler>();
     }
-
+    
     private void Awake()
     {
         if (Instance != null)
@@ -219,48 +216,5 @@ public class Gamer : Target
     public bool HasKitchenObject()
     {
         return kitchenObject != null;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent<Resource>(out Resource resource))
-        {
-            
-        }
-    }
-
-    private void OnCollided(Resource resource)
-    {
-        int startValue = 1;
-
-        if (_resources.ContainsKey(resource.Data.Type))
-        {
-            int currentValue = _resources[resource.Data.Type];
-            currentValue++;
-            _resources[resource.Data.Type] = currentValue;
-        }
-        else
-        {
-            _resources.Add(resource.Data.Type, startValue);
-        }
-            
-        DisplayDictionary();
-        
-        resource.gameObject.SetActive(false);
-    }
-
-    private void DisplayDictionary()
-    {
-        Debug.Log("Dictionary:");
-            
-        foreach (ResourceType resourceType in _resources.Keys)
-        {
-            Debug.Log($"{resourceType} : {_resources[resourceType]}");
-        }
-    }
-
-    public override void GetDamage(float damage)
-    {
-        Debug.Log("GetDamage");
     }
 }
