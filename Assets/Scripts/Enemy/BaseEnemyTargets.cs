@@ -12,6 +12,12 @@ namespace Enemy
         public event Action<Target> OnTargetExit;
         
         public List<Target> Targets { get; private set; } = new ();
+        public Target DefaultTarget {get; private set;}
+
+        public void SetDefaultTarget(Target target)
+        {
+            DefaultTarget = target;
+        }
         
         private void OnTriggerEnter(Collider collider)
         {

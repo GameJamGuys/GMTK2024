@@ -53,24 +53,16 @@ namespace Enemy
         private void TargetEnter(Target target)
         {
             bool isGamer = target.TryGetComponent(out Gamer gamer);
-            if (IsChasingGamer)
-            {
-                if (isGamer)
-                {
-                    chaisingTarget = target;
-                }
 
-                if (chaisingTarget == null)
-                {
-                    chaisingTarget = target;
-                }
-            }
-            else
+            if (!IsChasingGamer && isGamer)
             {
-                if (!isGamer && chaisingTarget == null)
-                {
-                    chaisingTarget = target;
-                }
+                return;
+            }
+
+            if (isGamer)
+            {
+                chaisingTarget = target;
+                StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
             }
         }
 
@@ -80,11 +72,12 @@ namespace Enemy
             {
                 if (baseEnemyTargets.Targets.Count == 0)
                 {
-                    chaisingTarget = null;
+                    chaisingTarget = baseEnemyTargets.DefaultTarget;
                 }
                 else
                 {
                     chaisingTarget = baseEnemyTargets.Targets[^1];
+                    StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
                 }
             }
         }
@@ -110,6 +103,12 @@ namespace Enemy
         public void EndAttacking()
         {
             isAttacking = false;
+        }
+
+        public void SetDefaultTarget(Target target)
+        {
+            chaisingTarget = target;
+            baseEnemyTargets.SetDefaultTarget(target);
         }
 
         private void ChangeStateToAttack()

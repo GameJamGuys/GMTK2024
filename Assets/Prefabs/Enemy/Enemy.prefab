@@ -120,7 +120,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 9.308788
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2917473089558019762
 MonoBehaviour:
@@ -288,9 +288,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
-  <Speed>k__BackingField: 2
+  <Speed>k__BackingField: 5
   <CheckTargetDistance>k__BackingField: 10
-  <AttackSpeed>k__BackingField: 1
+  <AttackSpeed>k__BackingField: 0.3
   <AttackDamage>k__BackingField: 10
   <IsChasingGamer>k__BackingField: 1
   baseEnemyAttack: {fileID: 8450202295206067154}
