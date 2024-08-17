@@ -217,4 +217,9 @@ public class Gamer : Target
     {
         return kitchenObject != null;
     }
+
+    public override void GetDamage(float damage)
+    {
+        Debug.Log("gamer GetDamage");
+    }
 }
