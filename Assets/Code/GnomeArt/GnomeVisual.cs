@@ -23,6 +23,8 @@ public class GnomeVisual : MonoBehaviour
         build.SetActive(false);
     }
 
+
+
     private void Update()
     {
         anim.SetBool("isWalk", gamer.IsWalking());
@@ -32,6 +34,14 @@ public class GnomeVisual : MonoBehaviour
             if (gamer.InputVector.y > 0) SetType(VisualType.Back);
             if (gamer.InputVector.y < 0) SetType(VisualType.Front);
         }
+
+        if (Input.GetKeyDown(KeyCode.B)) StartBuild();
+    }
+
+    private void StartBuild()
+    {
+        SetType(VisualType.Build);
+        anim.SetTrigger("Build");
     }
 
     public void SetType(VisualType type)
