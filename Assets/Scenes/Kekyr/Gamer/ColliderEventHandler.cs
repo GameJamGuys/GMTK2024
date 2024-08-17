@@ -9,7 +9,7 @@ public class ColliderEventHandler : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Resource>(out Resource resource))
         {
-            Debug.Log("Collided!");
+            //Debug.Log("Collided!");
             Collided?.Invoke(resource);
         }
     }
