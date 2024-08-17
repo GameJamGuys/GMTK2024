@@ -10,10 +10,12 @@ public class Harvester : MonoBehaviour
     [SerializeField] private Health _health;
 
     private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
-    [SerializeField]
-    private ColliderEventHandler _colliderEventHandler;
+    [SerializeField] private ColliderEventHandler _colliderEventHandler;
 
     public float MoveForce => _moveForce;
+    public float StartMoveDistance => _distance;
+
+    public float ScaleModifier => _scaleModifier;
 
     private void OnEnable()
     {
@@ -30,28 +32,16 @@ public class Harvester : MonoBehaviour
         _colliderEventHandler.Collided -= OnCollided;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Resource>(out Resource resource))
         {
+            resource.Init(this);
             //Debug.Log("Staying");
-            float currentDistance = (transform.position - resource.transform.position).magnitude;
-
-            if (currentDistance <= _distance)
-            {
-                //Debug.Log("StartToMove");
-                float scale = resource.gameObject.transform.localScale.x - _scaleModifier;
-
-                if (scale <= 0)
-                {
-                    scale = 0;
-                }
-
-                resource.gameObject.transform.localScale = new Vector3(scale, scale, scale);
-                StartCoroutine(resource.MoveTo(this));
-            }
+            
         }
     }
+
 
     private void OnCollided(Resource resource)
     {
@@ -61,8 +51,7 @@ public class Harvester : MonoBehaviour
         {
             Debug.Log("Collided with heal");
             _health.GetHeal();
-            resource.gameObject.SetActive(false);
-            Destroy(resource.gameObject);
+            resource.TargetReach();
             return;
         }
 
@@ -78,10 +67,8 @@ public class Harvester : MonoBehaviour
         }
 
         //DisplayDictionary();
-        resource.gameObject.SetActive(false);
-        Destroy(resource.gameObject);
+        resource.TargetReach();
     }
-
 
     private void DisplayDictionary()
     {
