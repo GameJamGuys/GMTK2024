@@ -52,10 +52,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Height: 1.5
+  m_Radius: 3.0620055
+  m_Height: 6.124011
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.26593828, y: 0, z: 0}
 --- !u!114 &8450202295206067154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,9 +145,9 @@ GameObject:
   - component: {fileID: 5512277712661831859}
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
-  - component: {fileID: 1577591104694286916}
+  - component: {fileID: 5803417577697809634}
   m_Layer: 6
-  m_Name: CrabEnemy
+  m_Name: 'SquidEnemy '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,10 +190,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.2136207
+  m_Radius: 1.5581902
+  m_Height: 3.1163805
   m_Direction: 1
-  m_Center: {x: 0, y: -0.39318967, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &591647872387883870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1577591104694286916
+--- !u!114 &5803417577697809634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,13 +230,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6441038293120242248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 303f254cb88b40af86584b9a53bab771, type: 3}
+  m_Script: {fileID: 11500000, guid: 0185c53c0e764589989f72a44c29e76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 20
-  <Speed>k__BackingField: 0.96
-  <AttackSpeed>k__BackingField: 1
-  <AttackDamage>k__BackingField: 10
+  <Speed>k__BackingField: 3
+  <AttackSpeed>k__BackingField: 1.2
+  <AttackDamage>k__BackingField: 15
   <IsChasingGamer>k__BackingField: 0
 --- !u!1 &7052160827636199121
 GameObject:
@@ -264,8 +264,8 @@ Transform:
   m_GameObject: {fileID: 7052160827636199121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 0.838, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
@@ -314,7 +314,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b40ef89eb9033044bcda4e0a30e5203, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 984c0ab73b1a95546a1a6114824d6a5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

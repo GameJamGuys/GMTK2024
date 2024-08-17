@@ -20,7 +20,14 @@ namespace Enemy
         protected EnemyStateMachine StateMachine;
         // todo заменить на позицию башни
         protected Rigidbody Rigidbody;
-        protected abstract void Attack(List<Target> targets);
+
+        protected virtual void Attack(List<Target> targets)
+        {
+            foreach (Target target in targets)
+            {
+                target.GetDamage(AttackDamage);
+            }
+        }
         
         private bool isMoving = false;
         private bool isAttacking = false;
