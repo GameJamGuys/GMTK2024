@@ -10,6 +10,7 @@ public class Harvester : MonoBehaviour
     [SerializeField] private Health _health;
 
     private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
+    [SerializeField]
     private ColliderEventHandler _colliderEventHandler;
 
     public float MoveForce => _moveForce;
@@ -21,7 +22,6 @@ public class Harvester : MonoBehaviour
             throw new ArgumentNullException(nameof(_health));
         }
 
-        _colliderEventHandler = GetComponentInChildren<ColliderEventHandler>();
         _colliderEventHandler.Collided += OnCollided;
     }
 
@@ -61,6 +61,8 @@ public class Harvester : MonoBehaviour
         {
             Debug.Log("Collided with heal");
             _health.GetHeal();
+            resource.gameObject.SetActive(false);
+            Destroy(resource.gameObject);
             return;
         }
 
@@ -76,9 +78,10 @@ public class Harvester : MonoBehaviour
         }
 
         //DisplayDictionary();
-
         resource.gameObject.SetActive(false);
+        Destroy(resource.gameObject);
     }
+
 
     private void DisplayDictionary()
     {
