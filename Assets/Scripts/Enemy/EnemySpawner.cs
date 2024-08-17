@@ -22,7 +22,7 @@ namespace Enemy
         public void Spawn()
         {
             var position = points[Random.Range(0, points.Count)].position;
-            position.y = 1;
+            position.y = 0;
             var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], position, Quaternion.identity);
             enemy.SetDefaultTarget(mainTowerTarget);
             enemies.Add(enemy);
