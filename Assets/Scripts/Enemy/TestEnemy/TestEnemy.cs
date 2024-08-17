@@ -8,7 +8,10 @@ namespace Enemy
     {
         protected override void Attack(List<Target> targets)
         {
-            Debug.Log("Attack");
+            foreach (Target target in targets)
+            {
+                target.GetDamage(AttackDamage);
+            }
         }
     }
 }
