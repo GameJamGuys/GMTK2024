@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Damage;
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
+
 public class Gamer : Target
 {
     public static Gamer Instance { get; private set; }
@@ -22,6 +22,7 @@ public class Gamer : Target
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private PlayerInputRouter gameInput;
     [SerializeField] private LayerMask countersLayerMask;
+    [SerializeField] private LayerMask collisionLayerMask;
     [SerializeField] private Transform kitchenObjectHoldPoint;
 
 
@@ -75,7 +76,7 @@ public class Gamer : Target
         }
     }*/
 
-    private void Update()
+    private void FixedUpdate()
     {
         HandleMovement();
         HandleInteractions();
@@ -130,7 +131,7 @@ public class Gamer : Target
         float playerRadius = .7f;
         float playerHeight = 2f;
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight,
-            playerRadius, moveDir, moveDistance);
+            playerRadius, moveDir, moveDistance, collisionLayerMask);
 
         if (!canMove)
         {
@@ -220,6 +221,6 @@ public class Gamer : Target
 
     public override void GetDamage(float damage)
     {
-        Debug.Log("gamer GetDamage");
+        Debug.Log("gamer GetDamage " + damage);
     }
 }
