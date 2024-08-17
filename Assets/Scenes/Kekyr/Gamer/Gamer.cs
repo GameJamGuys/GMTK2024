@@ -23,13 +23,12 @@ public class Gamer : Target
     [SerializeField] private PlayerInputRouter gameInput;
     [SerializeField] private LayerMask countersLayerMask;
     [SerializeField] private LayerMask collisionLayerMask;
-    [SerializeField] private Transform kitchenObjectHoldPoint;
-
+    //[SerializeField] private Transform kitchenObjectHoldPoint;
 
     private bool isWalking;
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
-    private KitchenObject kitchenObject;
+    //private KitchenObject kitchenObject;
 
 
     private void OnEnable()
@@ -189,35 +188,35 @@ public class Gamer : Target
         });
     }
 
-    public Transform GetKitchenObjectFollowTransform()
-    {
-        return kitchenObjectHoldPoint;
-    }
+    //public Transform GetKitchenObjectFollowTransform()
+    //{
+    //    return kitchenObjectHoldPoint;
+    //}
 
-    public void SetKitchenObject(KitchenObject kitchenObject)
-    {
-        this.kitchenObject = kitchenObject;
+    //public void SetKitchenObject(KitchenObject kitchenObject)
+    //{
+    //    this.kitchenObject = kitchenObject;
 
-        if (kitchenObject != null)
-        {
-            OnPickedSomething?.Invoke(this, EventArgs.Empty);
-        }
-    }
+    //    if (kitchenObject != null)
+    //    {
+    //        OnPickedSomething?.Invoke(this, EventArgs.Empty);
+    //    }
+    //}
 
-    public KitchenObject GetKitchenObject()
-    {
-        return kitchenObject;
-    }
+    //public KitchenObject GetKitchenObject()
+    //{
+    //    return kitchenObject;
+    //}
 
-    public void ClearKitchenObject()
-    {
-        kitchenObject = null;
-    }
+    //public void ClearKitchenObject()
+    //{
+    //    kitchenObject = null;
+    //}
 
-    public bool HasKitchenObject()
-    {
-        return kitchenObject != null;
-    }
+    //public bool HasKitchenObject()
+    //{
+    //    return kitchenObject != null;
+    //}
 
     public override void GetDamage(float damage)
     {
