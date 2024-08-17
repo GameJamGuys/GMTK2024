@@ -7,13 +7,13 @@ public class Harvester : MonoBehaviour
     [SerializeField] private float _moveForce;
     
     private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
+    [SerializeField]
     private ColliderEventHandler _colliderEventHandler;
 
     public float MoveForce => _moveForce;
 
     private void OnEnable()
     {
-        _colliderEventHandler = GetComponentInChildren<ColliderEventHandler>();
         _colliderEventHandler.Collided += OnCollided;
     }
     
