@@ -9,7 +9,6 @@ public class Gamer : Target
 {
     public static Gamer Instance { get; private set; }
 
-
     public event EventHandler OnPickedSomething;
     public event EventHandler<Gamer.OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 
@@ -29,6 +28,8 @@ public class Gamer : Target
     private Vector3 lastInteractDir;
     private BaseCounter selectedCounter;
     //private KitchenObject kitchenObject;
+
+    public Vector2 InputVector;
 
 
     private void OnEnable()
@@ -89,6 +90,7 @@ public class Gamer : Target
     private void HandleInteractions()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        InputVector = inputVector;
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 

@@ -9,6 +9,7 @@ public class GnomeVisual : MonoBehaviour
     Animator anim;
 
     public enum VisualType { Front, Back, Build};
+    private VisualType lastType;
 
     private void Start()
     {
@@ -22,14 +23,33 @@ public class GnomeVisual : MonoBehaviour
         build.SetActive(false);
     }
 
+
+
     private void Update()
     {
         anim.SetBool("isWalk", gamer.IsWalking());
+
+        if (lastType != VisualType.Build && gamer.IsWalking())
+        {
+            if (gamer.InputVector.y > 0) SetType(VisualType.Back);
+            if (gamer.InputVector.y < 0) SetType(VisualType.Front);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B)) StartBuild();
+    }
+
+    private void StartBuild()
+    {
+        SetType(VisualType.Build);
+        anim.SetTrigger("Build");
     }
 
     public void SetType(VisualType type)
     {
+        if (type == lastType) return;
+
         DeactiveAll();
+
         switch (type)
         {
             case VisualType.Front:
@@ -42,5 +62,6 @@ public class GnomeVisual : MonoBehaviour
                 build.SetActive(true);
                 break;
         }
+        lastType = type;
     }
 }
