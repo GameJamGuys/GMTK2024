@@ -5,6 +5,7 @@ public class Harvester : MonoBehaviour
 {
     [SerializeField] private float _distance;
     [SerializeField] private float _moveForce;
+    [SerializeField] private float _scaleModifier;
     
     private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
     private ColliderEventHandler _colliderEventHandler;
@@ -32,7 +33,10 @@ public class Harvester : MonoBehaviour
             if (currentDistance <= _distance)
             {
                 //Debug.Log("StartToMove");
-                
+                resource.gameObject.transform.localScale = new Vector3(
+                    resource.gameObject.transform.localScale.x - _scaleModifier,
+                    resource.gameObject.transform.localScale.y - _scaleModifier,
+                    resource.gameObject.transform.localScale.z - _scaleModifier);
                 StartCoroutine(resource.MoveTo(this));
             }
         }
