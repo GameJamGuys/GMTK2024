@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Damage;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class Gamer : MonoBehaviour
+public class Gamer : Target
 {
     public static Gamer Instance { get; private set; }
 
@@ -256,5 +257,10 @@ public class Gamer : MonoBehaviour
         {
             Debug.Log($"{resourceType} : {_resources[resourceType]}");
         }
+    }
+
+    public override void GetDamage(float damage)
+    {
+        Debug.Log("GetDamage");
     }
 }
