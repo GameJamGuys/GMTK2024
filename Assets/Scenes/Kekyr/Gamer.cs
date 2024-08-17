@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IKitchenObjectParent
+public class Gamer : MonoBehaviour
 {
-    public static Player Instance { get; private set; }
+    public static Gamer Instance { get; private set; }
 
 
     public event EventHandler OnPickedSomething;
-    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public event EventHandler<Gamer.OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
 
     [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private GameInput gameInput;
+    [SerializeField] private PlayerInputRouter gameInput;
     [SerializeField] private LayerMask countersLayerMask;
     [SerializeField] private Transform kitchenObjectHoldPoint;
 
@@ -37,13 +37,13 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         Instance = this;
     }
 
-    private void Start()
+    /*private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
         gameInput.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
-    }
+    }*/
 
-    private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
+    /*private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
     {
         if (!KitchenGameManager.Instance.IsGamePlaying()) return;
 
@@ -51,9 +51,9 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         {
             selectedCounter.InteractAlternate(this);
         }
-    }
+    }*/
 
-    private void GameInput_OnInteractAction(object sender, System.EventArgs e)
+    /*private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
         if (!KitchenGameManager.Instance.IsGamePlaying()) return;
 
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         {
             selectedCounter.Interact(this);
         }
-    }
+    }*/
 
     private void Update()
     {
@@ -162,15 +162,15 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
         isWalking = moveDir != Vector3.zero;
 
-        float rotateSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        /*float rotateSpeed = 10f;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);*/
     }
 
     private void SetSelectedCounter(BaseCounter selectedCounter)
     {
         this.selectedCounter = selectedCounter;
 
-        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+        OnSelectedCounterChanged?.Invoke(this, new Gamer.OnSelectedCounterChangedEventArgs
         {
             selectedCounter = selectedCounter
         });
