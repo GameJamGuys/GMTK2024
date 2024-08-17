@@ -152,7 +152,9 @@ namespace Enemy
             {
                 if (chaisingTarget != null)
                 {
-                    Rigidbody.linearVelocity = (chaisingTarget.transform.position - transform.position).normalized * Speed;
+                    var velocity = (chaisingTarget.transform.position - transform.position).normalized;
+                    velocity.y = 0;
+                    Rigidbody.linearVelocity = velocity * Speed;
                 }
                 else
                 {
