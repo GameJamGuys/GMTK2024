@@ -130,6 +130,7 @@ MonoBehaviour:
   collisionLayerMask:
     serializedVersion: 2
     m_Bits: 183
+  InputVector: {x: 0, y: 0}
 --- !u!114 &6478487827560543866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +268,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6209236088197187423, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7968585199474190632, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_Name
       value: Visual
@@ -279,6 +284,10 @@ PrefabInstance:
       propertyPath: gamer
       value: 
       objectReference: {fileID: 4989655443562152302}
+    - target: {fileID: 9208455172390900536, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
