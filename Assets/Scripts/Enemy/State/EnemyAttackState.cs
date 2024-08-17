@@ -3,12 +3,15 @@ using Enemy;
 
 public class EnemyAttackState : IStateWithArguments<BaseEnemy>
 {
+    private BaseEnemy enemy;
     public void Enter(BaseEnemy enemy)
     {
-        // todo атака
+        this.enemy = enemy;
+        enemy.StartAttacking();
     }
 
     public void Exit()
     {
+        enemy.EndAttacking();
     }
 }
