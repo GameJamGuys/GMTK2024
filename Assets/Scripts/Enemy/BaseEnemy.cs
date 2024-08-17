@@ -10,13 +10,12 @@ namespace Enemy
     {
         [field:SerializeField] public float Health {get; protected set;}
         [field:SerializeField] public float Speed {get; protected set;}
-        [field:SerializeField] public float CheckTargetDistance {get; protected set;}
         [field:SerializeField] public float AttackSpeed {get; protected set;}
         [field:SerializeField] public float AttackDamage {get; protected set;}
         [field:SerializeField] public bool IsChasingGamer {get; protected set;}
 
-        [SerializeField] public BaseEnemyAttack baseEnemyAttack;
-        [SerializeField] public BaseEnemyTargets baseEnemyTargets;
+        private BaseEnemyAttack baseEnemyAttack;
+        private BaseEnemyTargets baseEnemyTargets;
 
         protected EnemyStateMachine StateMachine;
         // todo заменить на позицию башни
@@ -30,6 +29,8 @@ namespace Enemy
 
         private void Awake()
         {
+            baseEnemyAttack = GetComponentInChildren<BaseEnemyAttack>();
+            baseEnemyTargets = GetComponentInChildren<BaseEnemyTargets>();
             Rigidbody = GetComponent<Rigidbody>();
             StateMachine = new EnemyStateMachine();
             StateMachine.Init();

@@ -9,7 +9,7 @@ namespace Enemy
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private Target mainTowerTarget;
-        [SerializeField] private BaseEnemy enemyPrefab;
+        [SerializeField] private List<BaseEnemy> enemyPrefabs;
 
         private List<BaseEnemy> enemies = new();
         private List<Transform> points;
@@ -23,7 +23,7 @@ namespace Enemy
         {
             var position = points[Random.Range(0, points.Count)].position;
             position.y = 2;
-            var enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
+            var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], position, Quaternion.identity);
             enemy.SetDefaultTarget(mainTowerTarget);
             enemies.Add(enemy);
         }

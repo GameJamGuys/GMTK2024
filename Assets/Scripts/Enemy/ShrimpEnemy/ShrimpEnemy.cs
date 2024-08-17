@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using Damage;
-using UnityEngine;
 
 namespace Enemy
 {
-    public class TestEnemy : BaseEnemy
+    public class ShrimpEnemy : BaseEnemy
     {
         protected override void Attack(List<Target> targets)
         {

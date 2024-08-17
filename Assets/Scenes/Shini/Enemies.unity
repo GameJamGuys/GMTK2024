@@ -2181,7 +2181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainTowerTarget: {fileID: 1628858978}
-  enemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+  enemyPrefabs:
+  - {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+  - {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
 --- !u!4 &1680238217
 Transform:
   m_ObjectHideFlags: 0
