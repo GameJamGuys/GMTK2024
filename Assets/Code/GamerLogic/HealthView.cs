@@ -29,13 +29,19 @@ public class HealthView : MonoBehaviour
         {
             throw new ArgumentNullException(nameof(_canvasGroup));
         }
+        
+        _slider.maxValue = _health.Max;
+        _slider.value = _slider.maxValue;
+        OnHealthChanged(_slider.value);
 
         _health.HealthChanged += OnHealthChanged;
+        _health.Died += OnDead;
     }
 
     private void OnDisable()
     {
         _health.HealthChanged -= OnHealthChanged;
+        _health.Died -= OnDead;
     }
     
     private void Update()
@@ -57,11 +63,20 @@ public class HealthView : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
     
-    public void OnHealthChanged(float newValue)
+    private void OnHealthChanged(float newValue)
     {
         _canvasGroup.DOFade(FadeInValue, _fadeDuration);
         _slider.DOValue(newValue, _changeDuration);
         _isTimerOn = true;
         _timer = _timerDuration;
     }
+
+    private void OnDead()
+    {
+        _isTimerOn = false;
+        _canvasGroup.DOFade(FadeOutValue, _fadeDuration);
+        _slider.DOKill();
+    }
+    
+    
 }

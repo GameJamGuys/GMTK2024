@@ -111,7 +111,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030437729440652746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -313.25}
+  m_LocalPosition: {x: 0, y: 0, z: -312.99}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -440,8 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506c3172d458e7740bdbafe2d74429e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _max: 30
-  _healAmount: 1
+  _visual: {fileID: 3163769056768641801}
+  _max: 200
+  _healAmount: 20
 --- !u!114 &3882650332084636729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,10 +655,10 @@ MonoBehaviour:
   player: {fileID: 4989655443562152302}
   visual: {fileID: 3163769056768641801}
   sideTowers:
-  - {fileID: 4415944869833727009, guid: 33b061bb64a2e4102bb8f2033c125eb8, type: 3}
-  - {fileID: 8718380797885590051, guid: 2c4c786f97b3a4b45b66649f48a46c8c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 2551789385059078838, guid: a5a125db1fef84f1d81a1ea09099e960, type: 3}
-  - {fileID: 4644591038411446305, guid: edbefe3099403465397209bf4707488d, type: 3}
+  - {fileID: 0}
   - {fileID: 6789124476386060546, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
   hintClose: {fileID: 0}
   hintFar: {fileID: 0}
