@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TowerSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class PauseMenu : MonoBehaviour
     private bool isGamePaused = false;
 
     public void LoadMenu() => Loader.Load(Loader.Scene.MainMenu);
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            TowerShop.Instance.OpenShop();
+    }
 
     public void TogglePauseGame()
     {
