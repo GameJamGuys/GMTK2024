@@ -2848,6 +2848,7 @@ MonoBehaviour:
   pause: {fileID: 7463472885439770930}
   holder: {fileID: 1635671652996894385}
   isOpen: 0
+  isBuild: 0
   towerCosts:
   - towerType: 0
     resources:

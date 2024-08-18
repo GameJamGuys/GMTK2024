@@ -16,6 +16,7 @@ namespace TowerSystem
         [SerializeField] GameObject holder;
 
         public bool isOpen;
+        public bool isBuild = false;
 
         [Space]
         [SerializeField]
@@ -36,6 +37,8 @@ namespace TowerSystem
 
         public void BuildTower(TowerType type)
         {
+            if (isBuild) return;
+            isBuild = true;
             CloseShop();
 
             TowerCost cost = GetTowerCost(type);
@@ -46,6 +49,7 @@ namespace TowerSystem
             }
 
             TowerBuilder.Instance.BuildTower(type);
+            isBuild = false;
         }
         public bool CheckTowerCost(TowerType type)
         {
@@ -64,7 +68,7 @@ namespace TowerSystem
             isOpen = false;
             holder.SetActive(false);
             GameUI.SetActive(true);
-            pause.TogglePauseGame();
+            pause.SetResume();
         }
 
         public void OpenShop()
