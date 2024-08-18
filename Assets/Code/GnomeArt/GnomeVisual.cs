@@ -32,11 +32,9 @@ public class GnomeVisual : MonoBehaviour
             if (gamer.InputVector.y > 0) SetType(VisualType.Back);
             if (gamer.InputVector.y < 0) SetType(VisualType.Front);
         }
-
-        if (Input.GetKeyDown(KeyCode.B)) StartBuild();
     }
 
-    private void StartBuild()
+    public void StartBuild()
     {
         SetType(VisualType.Build);
         anim.SetTrigger("Build");
