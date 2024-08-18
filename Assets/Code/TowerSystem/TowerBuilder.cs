@@ -12,14 +12,9 @@ namespace TowerSystem
         [SerializeField]
         List<SideTower> sideTowers;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                if(CheckArea())
-                    BuildTower(TowerType.Range);
-            }
-        }
+        [Space]
+        [SerializeField] GameObject hintClose, hintFar;
+
 
         public void BuildTower(TowerType type)
         {
@@ -29,7 +24,7 @@ namespace TowerSystem
             }
         }
 
-        private bool CheckArea()
+        public bool CheckArea()
         {
             print("Check area");
             Collider[] hits = Physics.OverlapSphere(transform.position, 2f);
@@ -42,6 +37,7 @@ namespace TowerSystem
                     if(area.AreaType == BuildArea.Type.Inner)
                     {
                         print("Too close");
+                        ShowAndClose(hintClose);
                         return false;
                     }
                        
@@ -54,7 +50,15 @@ namespace TowerSystem
                 }
             }
             print("Too far");
+            ShowAndClose(hintFar);
             return false;
+        }
+
+        public async void ShowAndClose(GameObject closeObject)
+        {
+            closeObject.SetActive(true);
+            await UniTask.Delay(500);
+            closeObject.SetActive(false);
         }
 
         private async void StartBuildTower(SideTower towerPrefab)

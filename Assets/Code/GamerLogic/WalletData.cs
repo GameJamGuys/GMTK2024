@@ -7,6 +7,8 @@ public static class WalletData
     public static int buildResource;
     public static int supportResource;
 
+    public static int notesCount;
+
     public static event Action<Resource.Types> OnChangeWallet;
 
     public static void AddResource(Resource.Types type, int amount = 1) => ChangeResource(type, amount);
@@ -27,7 +29,7 @@ public static class WalletData
                 break;
         }
 
-        OnChangeWallet(type);
+        OnChangeWallet?.Invoke(type);
     }
 
     public static int GetResourceCount(Resource.Types type)
@@ -43,4 +45,13 @@ public static class WalletData
         }
         return 0;
     }
+
+    public static void SetAllData(int amount)
+    {
+        attackResource = amount;
+        buildResource = amount;
+        supportResource = amount;
+    }
+
+    public static void ResetData() => SetAllData(0);
 }

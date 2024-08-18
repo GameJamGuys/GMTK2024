@@ -24,6 +24,8 @@ public class Harvester : MonoBehaviour
             throw new ArgumentNullException(nameof(_health));
         }
 
+        WalletData.SetAllData(1000);
+
         _colliderEventHandler.Collided += OnCollided;
     }
 
@@ -58,7 +60,7 @@ public class Harvester : MonoBehaviour
                 resource.TargetReach();
                 return;
             default:   
-                WalletData.AddResource(resource.Type);
+                WalletData.AddResource(resource.Type, resource.Count);
                 break;
         }
 
