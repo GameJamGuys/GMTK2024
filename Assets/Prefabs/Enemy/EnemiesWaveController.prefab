@@ -335,7 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f79d832feb46f08a3e4923e6d541ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTowerTarget: {fileID: 0}
   enemyPrefabs:
   - {fileID: 4428983791510550932, guid: b1165ca1b60752549b0cea79cb50868f, type: 3}
 --- !u!1 &8319212573755062775
@@ -383,16 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3c6d06898843418240bb0805e8d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - Pulses:
-    - PulseCooldown: 2
-      Enemies:
-      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
-        Count: 2
-      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
-        Count: 2
-      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
-        Count: 2
+  wavesConfig: {fileID: 11400000, guid: 675144f0e629ef641ae5671c80f157d7, type: 2}
   enemySpawner: {fileID: 4560517531430553433}
 --- !u!1 &8371691451421617315
 GameObject:

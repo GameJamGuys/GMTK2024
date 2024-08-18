@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b55794580f0490da96ce47b778d628d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTowerAreaPrefab: {fileID: 3561656323245053451, guid: 668ceeda6688a99429038e628a3b1cd0, type: 3}
+  effectTowerAreaPrefab: {fileID: 0}
   areaScaleDuration: 1
-  areaMaxScale: 20
-  areaScaleCooldown: 2
-  areaHeal: 10
+  areaMaxScale: 15
+  areaScaleCooldown: 0.5
+  areaHeal: 15

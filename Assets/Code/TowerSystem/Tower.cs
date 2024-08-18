@@ -15,7 +15,7 @@ namespace TowerSystem
         private void Start()
         {
             currentHealth = health;
-            upgradeCanvas = GetComponentInChildren<TowerUpgradesView>();
+            upgradeCanvas = GetComponentInChildren<TowerUpgradesView>(true);
         }
 
         public event Action<Tower> OnDie;

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8020892f0cc4eca85a484633cec4579, type: 3}
+  m_Name: BalancedWaves
+  m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - Pulses:
+    - PulseCooldown: 20
+      Enemies:
+      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+        Count: 15
+      - EnemyPrefab: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
+        Count: 5
+    - PulseCooldown: 0
+      Enemies:
+      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+        Count: 10
+      - EnemyPrefab: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
+        Count: 10
+      - EnemyPrefab: {fileID: 1577591104694286916, guid: f47cc221772e98843a4629bbeeaa1ab7, type: 3}
+        Count: 5

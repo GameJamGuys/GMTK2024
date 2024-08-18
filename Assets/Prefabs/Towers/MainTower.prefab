@@ -1194,8 +1194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 278665198872994135, guid: 1dffbb3c228c92a4d8d243b29cb5b098, type: 3}
   bulletSpeed: 9
-  bulletAttackSpeed: 0.2
-  bulletDamage: 10
+  bulletAttackSpeed: 0.5
+  bulletDamage: 5
 --- !u!1 &6044987714073351437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95896a643cc545c7a8ed1c88cb92cb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
   towerType: 0
 --- !u!1 &6719279637541962933
 GameObject:
