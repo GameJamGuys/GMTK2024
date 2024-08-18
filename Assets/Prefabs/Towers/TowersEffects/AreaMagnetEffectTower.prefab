@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875643657679984820}
-  - component: {fileID: 2684126035308168560}
+  - component: {fileID: 4262161989187532406}
   m_Layer: 10
-  m_Name: AreaDamageEffectTower
+  m_Name: AreaMagnetEffectTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2684126035308168560
+--- !u!114 &4262161989187532406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4788888367638431461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eabd3b8919c461197e8a33bb005ee94, type: 3}
+  m_Script: {fileID: 11500000, guid: a5a9bc79611f446cbb5318c1213af230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTowerAreaPrefab: {fileID: 1741192817454179876, guid: f90190ce0b038dd438aa20259421de1e, type: 3}
+  effectTowerAreaPrefab: {fileID: 7542282869593299750, guid: a2d55bc0582099848a0469c4fb1ad5f7, type: 3}
   areaScaleDuration: 1
   areaMaxScale: 20
-  areaScaleCooldown: 2
-  areaDamage: 1
+  areaScaleCooldown: 1

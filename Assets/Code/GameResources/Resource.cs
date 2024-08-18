@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -18,9 +16,9 @@ public class Resource : MonoBehaviour
 
     public Types Type;
 
-    private Rigidbody _rigidbody;
+    public Rigidbody Rigidbody { get; private set; }
 
-    private Transform _movePos;
+    private Transform _moveTransform;
     private float _moveForce;
     private float _startMoveDist;
     private float _scaleModif;
@@ -30,22 +28,29 @@ public class Resource : MonoBehaviour
 
     private void OnEnable()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        Rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Init(Harvester harvester)
+    public void Init(ResourceInitData data)
     {
-        _movePos = harvester.transform;
-        _moveForce = harvester.MoveForce;
-        _startMoveDist = harvester.StartMoveDistance;
-        _scaleModif = harvester.ScaleModifier;
+        _moveTransform = data.MoveTransform;
+        _moveForce = data.MoveForce;
+        _startMoveDist = data.StartMoveDistance;
+        _scaleModif = data.ScaleModifier;
         _isInit = true;
     }
 
     public void TargetReach()
     {
-        _isMove = false;
+        Stop();
         Destroy(gameObject);
+    }
+
+    public void Stop()
+    {
+        _isMove = false;
+        _isInit = false;
+        Rigidbody.linearVelocity = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,8 +66,8 @@ public class Resource : MonoBehaviour
     {
         if(_isMove)
         {
-            Vector3 finalTarget = new Vector3(_movePos.position.x, _movePos.position.y + _offsetY,
-                _movePos.position.z);
+            Vector3 finalTarget = new Vector3(_moveTransform.position.x, _moveTransform.position.y + _offsetY,
+                _moveTransform.position.z);
 
             //if (Vector3.Distance(finalTarget, transform.position) <= 1.2f)
             //{
@@ -71,7 +76,7 @@ public class Resource : MonoBehaviour
             //}
 
             Vector3 direction = (finalTarget - transform.position).normalized;
-            _rigidbody.linearVelocity = direction * _moveForce;
+            Rigidbody.linearVelocity = direction * _moveForce;
             
             float scale = transform.localScale.x - _scaleModif;
             if (scale <= 0.1f)
@@ -85,7 +90,7 @@ public class Resource : MonoBehaviour
 
         if (_isInit)
         {
-            float currentDistance = (_movePos.position - transform.position).magnitude;
+            float currentDistance = (_moveTransform.position - transform.position).magnitude;
             
             if (currentDistance <= _startMoveDist)
             {
@@ -94,4 +99,11 @@ public class Resource : MonoBehaviour
         }
     }
 
+    public struct ResourceInitData
+    {
+        public Transform MoveTransform;
+        public float MoveForce;
+        public float StartMoveDistance;
+        public float ScaleModifier;
+    }
 }
