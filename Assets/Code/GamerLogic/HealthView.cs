@@ -13,7 +13,7 @@ public class HealthView : MonoBehaviour
     [SerializeField] private float _changeDuration;
     [SerializeField] private float _fadeDuration;
     [SerializeField] private float _timerDuration;
-    
+
     private Slider _slider;
     private bool _isTimerOn;
     private float _timer;
@@ -30,14 +30,21 @@ public class HealthView : MonoBehaviour
             throw new ArgumentNullException(nameof(_canvasGroup));
         }
 
+        _canvasGroup.alpha = 0f;
+        _slider.maxValue = _health.Max;
+        _slider.value = _slider.maxValue;
+        //OnHealthChanged(_slider.value);
+
         _health.HealthChanged += OnHealthChanged;
+        _health.Died += OnDead;
     }
 
     private void OnDisable()
     {
         _health.HealthChanged -= OnHealthChanged;
+        _health.Died -= OnDead;
     }
-    
+
     private void Update()
     {
         if (_isTimerOn)
@@ -56,12 +63,20 @@ public class HealthView : MonoBehaviour
     {
         _slider = GetComponent<Slider>();
     }
-    
-    public void OnHealthChanged(float newValue)
+
+    private void OnHealthChanged(float newValue)
     {
         _canvasGroup.DOFade(FadeInValue, _fadeDuration);
         _slider.DOValue(newValue, _changeDuration);
         _isTimerOn = true;
         _timer = _timerDuration;
+    }
+
+    private void OnDead()
+    {
+        Debug.Log("HealthViewDead");
+        _isTimerOn = false;
+        _slider.DOKill();
+        _canvasGroup.DOKill();
     }
 }
