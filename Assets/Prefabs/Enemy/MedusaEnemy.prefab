@@ -160,8 +160,8 @@ Transform:
   m_GameObject: {fileID: 4402722967715749427}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.332762, y: 2.3722908, z: 5.5551863}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalScale: {x: 6, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
   - component: {fileID: 8284524891914163641}
+  - component: {fileID: 1346624073827808060}
   m_Layer: 6
   m_Name: MedusaEnemy
   m_TagString: Untagged
@@ -322,12 +323,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
-  <Speed>k__BackingField: 1
+  <Speed>k__BackingField: 0.83
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 50
   <IsChasingGamer>k__BackingField: 1
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField: []
+--- !u!95 &1346624073827808060
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441038293120242248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ea5d69cffcd44f7ab94192864ecac9a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,13 +376,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7052160827636199121}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.05, z: 0}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 4.32, z: 2.21}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!212 &64544215940112628
 SpriteRenderer:
   m_ObjectHideFlags: 0

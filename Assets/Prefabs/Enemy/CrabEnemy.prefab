@@ -160,8 +160,8 @@ Transform:
   m_GameObject: {fileID: 3551515893156441370}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3999999, y: 0.9462167, z: 1.6}
+  m_LocalPosition: {x: 0, y: 0.026, z: -0.14}
+  m_LocalScale: {x: 2, y: 0.5, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 591647872387883870}
   - component: {fileID: 1577591104694286916}
   - component: {fileID: 3140419198242742003}
+  - component: {fileID: 6745233723363766886}
   m_Layer: 6
   m_Name: CrabEnemy
   m_TagString: Untagged
@@ -299,13 +300,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 20
-  <Speed>k__BackingField: 0.96
+  <Speed>k__BackingField: 1
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 10
   <IsChasingGamer>k__BackingField: 0
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField:
   - ResourcePrefab: {fileID: 6072106964333509425, guid: 0cd06c3b825714c23ad0aa009df76d87, type: 3}
+    ResourceCount: 0
     Chance: 0.541
 --- !u!136 &3140419198242742003
 CapsuleCollider:
@@ -330,6 +332,28 @@ CapsuleCollider:
   m_Height: 1.2564559
   m_Direction: 0
   m_Center: {x: 0, y: 0.84, z: 0}
+--- !u!95 &6745233723363766886
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441038293120242248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a305316f574054d12843cbfd06cd12e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0
