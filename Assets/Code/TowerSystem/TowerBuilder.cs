@@ -16,7 +16,8 @@ namespace TowerSystem
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                BuildTower(TowerType.Range);
+                if(CheckArea())
+                    BuildTower(TowerType.Range);
             }
         }
 
@@ -28,7 +29,7 @@ namespace TowerSystem
             }
         }
 
-        private void CheckArea()
+        private bool CheckArea()
         {
             print("Check area");
             Collider[] hits = Physics.OverlapSphere(transform.position, 2f);
@@ -38,9 +39,22 @@ namespace TowerSystem
             {
                 if (hit.TryGetComponent(out BuildArea area))
                 {
-                    print(area.AreaType);
+                    if(area.AreaType == BuildArea.Type.Inner)
+                    {
+                        print("Too close");
+                        return false;
+                    }
+                       
+                    if (area.AreaType == BuildArea.Type.Outer)
+                    {
+                        print("Nice spot");
+                        return true;
+                    }
+                        
                 }
             }
+            print("Too far");
+            return false;
         }
 
         private async void StartBuildTower(SideTower towerPrefab)
