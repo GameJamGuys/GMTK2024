@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333324752301500949}
   - component: {fileID: 7978471889977235644}
-  - component: {fileID: 8518868137853445521}
+  - component: {fileID: 9138810029969651840}
   m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
@@ -270,7 +270,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.93, y: 0.94, z: -3.52}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 780512826060660443}
@@ -303,7 +303,7 @@ CapsuleCollider:
   m_Height: 4.044943
   m_Direction: 1
   m_Center: {x: 0, y: 1.8767657, z: 0}
---- !u!114 &8518868137853445521
+--- !u!114 &9138810029969651840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,9 +312,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2483743685546745653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95896a643cc545c7a8ed1c88cb92cb6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c29a3ee59e143c9ac08dc8230149170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 0
 --- !u!1 &2675021992057340545
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7511265128378251402
 Transform:
   m_ObjectHideFlags: 0
@@ -1313,7 +1314,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7531844488805773562}
@@ -1424,7 +1425,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 6
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5779367163335975371
 MonoBehaviour:
