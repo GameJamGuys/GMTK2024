@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 25ab358f44ef2c8448a80ebdcee0790d, type: 2}
-  effectTowerAreaPrefab: {fileID: 3561656323245053451, guid: ce32f0ffefcf54b08bb385cfc5640785, type: 3}
+  effectTowerAreaPrefab: {fileID: 0}
   tower: {fileID: 0}
