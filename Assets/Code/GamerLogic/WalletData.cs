@@ -27,7 +27,7 @@ public static class WalletData
                 break;
         }
 
-        OnChangeWallet(type);
+        OnChangeWallet?.Invoke(type);
     }
 
     public static int GetResourceCount(Resource.Types type)
