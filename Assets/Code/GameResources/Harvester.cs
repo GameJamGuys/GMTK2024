@@ -51,12 +51,15 @@ public class Harvester : MonoBehaviour
     {
         int startValue = 1;
 
-        if (resource.Type == Resource.Types.Heal)
+        switch (resource.Type)
         {
-            Debug.Log("Collided with heal");
-            _health.GetHeal();
-            resource.TargetReach();
-            return;
+            case Resource.Types.Heal:
+                _health.GetHeal();
+                resource.TargetReach();
+                return;
+            default:
+                WalletData.AddResource(resource.Type);
+                break;
         }
 
         if (_resources.ContainsKey(resource.Type))

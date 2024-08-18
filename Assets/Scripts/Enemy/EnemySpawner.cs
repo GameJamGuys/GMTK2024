@@ -11,20 +11,13 @@ namespace Enemy
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private List<BaseEnemy> enemyPrefabs;
-
-        private Target mainTowerTarget;
-
+        
         private List<BaseEnemy> enemies = new();
         private List<Transform> points;
 
         private void Awake()
         {
             points = GetComponentsInChildren<Transform>().ToList();
-        }
-
-        private void Start()
-        {
-            mainTowerTarget = TowerManager.Instance.mainTower;
         }
 
         private void Spawn()
@@ -42,7 +35,7 @@ namespace Enemy
         public void Spawn(BaseEnemy enemyPrefab, Vector3 position)
         {
             var enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
-            enemy.SetDefaultTarget(mainTowerTarget);
+            enemy.SetDefaultTarget(TowerManager.Instance.mainTower);
             enemy.OnDie += EnemyDied;
             enemies.Add(enemy);
         }

@@ -269,6 +269,10 @@ MonoBehaviour:
   visual: {fileID: 3163769056768641801}
   sideTowers:
   - {fileID: 4415944869833727009, guid: 33b061bb64a2e4102bb8f2033c125eb8, type: 3}
+  - {fileID: 8718380797885590051, guid: 2c4c786f97b3a4b45b66649f48a46c8c, type: 3}
+  - {fileID: 2551789385059078838, guid: a5a125db1fef84f1d81a1ea09099e960, type: 3}
+  - {fileID: 4644591038411446305, guid: edbefe3099403465397209bf4707488d, type: 3}
+  - {fileID: 6789124476386060546, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
 --- !u!1001 &4929116913695054602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 519402100873580103, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9659258
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 519402100873580103, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2588191
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 519402100873580103, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalRotation.y
@@ -311,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 519402100873580103, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 519402100873580103, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

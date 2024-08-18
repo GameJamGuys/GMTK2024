@@ -4,9 +4,20 @@ using System;
 
 namespace TowerSystem
 {
-    [DefaultExecutionOrder(-20)]
+    public enum MainTowerUpgrades
+    {
+        AttackSpeedIncrease,
+        BuffEffectIncrease,
+        CooldownReduce,
+        GnomeSpeedIncrease,
+        RadiusEffectIncrease
+    }
+
+    [DefaultExecutionOrder(-35)]
     public class TowerManager : StaticInstance<TowerManager>
     {
+        
+
         [SerializeField]
         List<Tower> towers;
 
@@ -23,16 +34,28 @@ namespace TowerSystem
             foreach(Tower tower in towers)
             {
                 if (tower.TryGetComponent(out MainTower main))
+                {
+                    tower.OnDie += TowerDie;
                     mainTower = main;
+                }
             }
+
+            //mainTower.GetComponentInChildren<BaseEffectTower>().GetComponent<SphereCollider>().radius = 15;
         }
 
         public void AddTower(Tower tower)
         {
+            tower.OnDie += TowerDie;
             towers.Add(tower);
             OnNewTower?.Invoke(towers.Count);
         }
 
+        private void TowerDie(Tower tower)
+        {
+            tower.OnDie -= TowerDie;
+            towers.Remove(tower);
+            Destroy(tower.gameObject);
+        }
     }
 
 }
