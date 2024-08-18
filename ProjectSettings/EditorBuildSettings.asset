@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TowerTest.unity
+    guid: 38d44947631e24cd7b9611d69db5dc2a
+  - enabled: 1
     path: Assets/Scenes/Game/MainMenu.unity
     guid: c17f7ebad075b4a9eb79a526ecc7cc94
   - enabled: 1

@@ -4,12 +4,15 @@ using Damage;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+using TowerSystem;
+
 namespace Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private Target mainTowerTarget;
         [SerializeField] private List<BaseEnemy> enemyPrefabs;
+
+        private Target mainTowerTarget;
 
         private List<BaseEnemy> enemies = new();
         private List<Transform> points;
@@ -17,6 +20,11 @@ namespace Enemy
         private void Awake()
         {
             points = GetComponentsInChildren<Transform>().ToList();
+        }
+
+        private void Start()
+        {
+            mainTowerTarget = TowerManager.Instance.mainTower;
         }
 
         private void Spawn()

@@ -12,17 +12,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangeTower Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5629174407268166119, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930639555284344192, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.93
+      value: 15.6
       objectReference: {fileID: 0}
     - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.94
+      value: -0.45000267
       objectReference: {fileID: 0}
     - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.52
+      value: 0.13580132
       objectReference: {fileID: 0}
     - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +71,18 @@ PrefabInstance:
     - target: {fileID: 6333324752301500949, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890312187655357837, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890312187655357837, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890312187655357837, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

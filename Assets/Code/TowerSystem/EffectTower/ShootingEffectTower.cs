@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BulletSystem;
 using Enemy;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 namespace TowerSystem
 {
@@ -16,18 +17,35 @@ namespace TowerSystem
 
         private BaseEnemy targetEnemy;
         private List<BaseEnemy> enemiesInRange = new();
+        
+        private bool isReady;
+        private float timer;
 
         private void Start()
         {
-            StartCoroutine(UseEffectsCoroutine());
+            isReady = true;
+            timer = bulletAttackSpeed;
+        }
+
+        private void FixedUpdate()
+        {
+            if (isReady && targetEnemy != null)
+                UseEffect();
+
+            if(!isReady)
+            {
+                timer -= Time.fixedDeltaTime;
+                if(timer <= 0)
+                {
+                    isReady = true;
+                    timer = bulletAttackSpeed;
+                }
+            }
         }
 
         public override void UseEffect()
         {
-            if (targetEnemy == null)
-            {
-                return;
-            }
+            isReady = false;
             Instantiate(BulletPrefab, transform.position, Quaternion.identity).StartMove(bulletDamage, bulletSpeed, targetEnemy.transform.position);
         }
 
@@ -75,21 +93,5 @@ namespace TowerSystem
             }
         }
 
-        private IEnumerator UseEffectsCoroutine()
-        {
-            while (true)
-            {
-                if (targetEnemy != null)
-                {
-                    UseEffect();
-                    yield return new WaitForSeconds(bulletAttackSpeed);
-                }
-                else
-                {
-                    yield return null;
-                }
-                
-            }
-        }
     }
 }
