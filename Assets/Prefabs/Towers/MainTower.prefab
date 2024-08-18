@@ -1194,8 +1194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 278665198872994135, guid: 1dffbb3c228c92a4d8d243b29cb5b098, type: 3}
   bulletSpeed: 9
-  bulletAttackSpeed: 0.5
-  bulletDamage: 5
+  bulletAttackSpeed: 0.2
+  bulletDamage: 10
 --- !u!1 &6044987714073351437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95896a643cc545c7a8ed1c88cb92cb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
   towerType: 0
 --- !u!1 &6719279637541962933
 GameObject:
@@ -1896,13 +1896,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 7992075459288402131, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
-      propertyPath: m_Value
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992075459288402131, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
-      propertyPath: m_MaxValue
-      value: 500
+    - target: {fileID: 6007447856846325027, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
