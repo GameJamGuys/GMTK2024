@@ -1,18 +1,22 @@
 using System;
-using TMPro;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textMesh;
+    [SerializeField] private Health _health;
+    [SerializeField] private float _speed;
 
-    private Health _health;
+    private Coroutine _changeValue;
+    private Slider _slider;
+    private float _filled;
 
     private void OnEnable()
     {
-        if (_textMesh == null)
+        if (_health == null)
         {
-            throw new ArgumentNullException(nameof(_textMesh));
+            throw new ArgumentNullException(nameof(_health));
         }
 
         _health.HealthChanged += OnHealthChanged;
@@ -23,19 +27,26 @@ public class HealthView : MonoBehaviour
         _health.HealthChanged -= OnHealthChanged;
     }
 
-    public void Init(Health health)
+    private void Awake()
     {
-        if (health == null)
-        {
-            throw new ArgumentNullException(nameof(health));
-        }
-
-        _health = health;
-        enabled = true;
+        _slider = GetComponent<Slider>();
     }
 
-    private void OnHealthChanged(float health)
+    public void OnHealthChanged(float newValue)
     {
-        _textMesh.text = health.ToString();
+        if (_changeValue != null)
+            StopCoroutine(_changeValue);
+
+        _changeValue = StartCoroutine(ChangeValue(newValue));
+    }
+
+    private IEnumerator ChangeValue(float newValue)
+    {
+        while (_filled != newValue)
+        {
+            _slider.value = Mathf.MoveTowards(_filled, newValue, _speed * Time.deltaTime);
+            _filled = _slider.value;
+            yield return null;
+        }
     }
 }
