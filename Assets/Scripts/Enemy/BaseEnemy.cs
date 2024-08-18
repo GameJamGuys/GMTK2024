@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Damage;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
@@ -14,6 +15,8 @@ namespace Enemy
         [field:SerializeField] public float AttackSpeed {get; protected set;}
         [field:SerializeField] public float AttackDamage {get; protected set;}
         [field:SerializeField] public bool IsChasingGamer {get; protected set;}
+        
+        [field:SerializeField] public List<EnemyResourcesConfig> EnemyResourcesConfigs {get; protected set;}
 
         public float CurrentHealth {get; protected set;}
         public event Action<BaseEnemy> OnDie;
@@ -46,6 +49,17 @@ namespace Enemy
             StateMachine = new EnemyStateMachine();
             StateMachine.Init();
             StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
+        }
+
+        public void SpawnResources()
+        {
+            foreach (EnemyResourcesConfig config in EnemyResourcesConfigs)
+            {
+                if (config.Chance >= Random.Range(0, 1))
+                {
+                    Instantiate(config.ResourcePrefab, transform.position, Quaternion.identity);
+                }
+            }
         }
 
         public void GetDamage(float damage)

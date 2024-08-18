@@ -3,7 +3,7 @@ using System.Collections;
 using Damage;
 using UnityEngine;
 
-namespace Enemy
+namespace BulletSystem
 {
     public class Bullet : MonoBehaviour
     {

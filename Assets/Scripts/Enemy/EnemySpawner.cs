@@ -51,6 +51,7 @@ namespace Enemy
         private void EnemyDied(BaseEnemy enemy)
         {
             enemy.OnDie -= EnemyDied;
+            enemy.SpawnResources();
             enemies.Remove(enemy);
             Destroy(enemy.gameObject);
         }
