@@ -9,5 +9,10 @@ namespace TowerSystem
         {
             Debug.Log("Tower GetDamage");
         }
+
+        public void GetHeal(float heal)
+        {
+            Debug.Log("Tower GetHeal");
+        }
     }
 }
