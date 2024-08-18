@@ -2584,6 +2584,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
+      propertyPath: wavesConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 675144f0e629ef641ae5671c80f157d7, type: 2}
+    - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
       propertyPath: waves.Array.size
       value: 2
       objectReference: {fileID: 0}
