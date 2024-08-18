@@ -75,6 +75,7 @@ namespace TowerSystem
 
             foreach (var baseEnemy in enemiesInRange)
             {
+                if (baseEnemy == null) continue;
                 if (potentialTarget == null || Vector3.Distance(baseEnemy.transform.position, transform.position) < Vector3.Distance(potentialTarget.transform.position, transform.position))
                 {
                     potentialTarget = baseEnemy;

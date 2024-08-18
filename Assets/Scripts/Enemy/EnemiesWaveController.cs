@@ -1,4 +1,5 @@
 using System.Collections;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Enemy
@@ -10,8 +11,9 @@ namespace Enemy
         
         private Coroutine coroutine;
 
-        private void Start()
+        private async void Start()
         {
+            await UniTask.Delay(200);
             StartWave();
         }
 

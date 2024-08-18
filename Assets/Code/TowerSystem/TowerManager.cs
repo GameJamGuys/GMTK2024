@@ -13,7 +13,7 @@ namespace TowerSystem
         RadiusEffectIncrease
     }
 
-    [DefaultExecutionOrder(-20)]
+    [DefaultExecutionOrder(-35)]
     public class TowerManager : StaticInstance<TowerManager>
     {
         
@@ -34,8 +34,10 @@ namespace TowerSystem
             foreach(Tower tower in towers)
             {
                 if (tower.TryGetComponent(out MainTower main))
+                {
                     tower.OnDie += TowerDie;
                     mainTower = main;
+                }
             }
 
             //mainTower.GetComponentInChildren<BaseEffectTower>().GetComponent<SphereCollider>().radius = 15;
