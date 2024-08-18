@@ -1,7 +1,7 @@
 using Damage;
 using UnityEngine;
 
-namespace Tower
+namespace TowerSystem
 {
     public class Tower : Target
     {

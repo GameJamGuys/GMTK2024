@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     {
         _current = _start;
         HealthChanged?.Invoke(_current);
-        GetDamage(4);
+        //GetDamage(4);
     }
 
     public void GetDamage(uint damage)
