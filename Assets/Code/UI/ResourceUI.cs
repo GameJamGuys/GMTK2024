@@ -12,16 +12,21 @@ public class ResourceUI : MonoBehaviour
     private void OnEnable()
     {
         CheckResource(type);
+        WalletData.OnChangeWallet += CheckResource;
+    }
+
+    private void OnDisable()
+    {
+        WalletData.OnChangeWallet -= CheckResource;
     }
 
     void CheckResource(Resource.Types changeType)
     {
         if(changeType == type)
         {
-            icon.DOShakeScale(0.2f, 1.5f, 5, 30);
+            icon.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .1f);
             count.text = WalletData.GetResourceCount(type).ToString();
             icon.DOScale(new Vector3(1f, 1f, 1f), .1f);
         }
-
     }
 }
