@@ -1311,6 +1311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a89fdc09e734fa4a0b6dd052e1f9d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameUI: {fileID: 0}
+  pause: {fileID: 0}
+  holder: {fileID: 0}
+  isOpen: 0
+  towerCosts: []
 --- !u!114 &726816306
 MonoBehaviour:
   m_ObjectHideFlags: 0
