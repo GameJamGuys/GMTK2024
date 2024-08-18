@@ -16,10 +16,11 @@ namespace TowerSystem
         
         public TowerUpdateView UpgradeView {get; private set;}
 
-        private float currentHealth;
         private int upgradeLevel = 0;
 
         public bool IsLastUpgrade => upgradeLevel >= UpgradeConfig.Levels.Count - 1;
+        protected float currentHealth;
+        private TowerUpgradesView upgradeCanvas;
 
         protected virtual void Start()
         {
@@ -116,6 +117,11 @@ namespace TowerSystem
         {
             HealthChange?.Invoke(currentHealth);
             Debug.Log("Tower GetHeal");
+        }
+
+        public float GetMaxHealth()
+        {
+            return UpgradeConfig.Levels[upgradeLevel].Config.Health;
         }
 
         private void GetUpgradeView()
