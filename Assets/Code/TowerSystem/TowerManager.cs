@@ -34,6 +34,7 @@ namespace TowerSystem
             foreach(Tower tower in towers)
             {
                 if (tower.TryGetComponent(out MainTower main))
+                    tower.OnDie += TowerDie;
                     mainTower = main;
             }
 
@@ -51,6 +52,7 @@ namespace TowerSystem
         {
             tower.OnDie -= TowerDie;
             towers.Remove(tower);
+            Destroy(tower.gameObject);
         }
     }
 

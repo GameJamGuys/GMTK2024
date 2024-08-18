@@ -326,6 +326,8 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 50
   <IsChasingGamer>k__BackingField: 1
+  <AgroRange>k__BackingField: 10
+  <EnemyResourcesConfigs>k__BackingField: []
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0

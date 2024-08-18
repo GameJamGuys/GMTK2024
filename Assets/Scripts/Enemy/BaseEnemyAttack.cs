@@ -10,6 +10,23 @@ namespace Enemy
         public event Action<Target> OnTargetCollision;
 
         public List<Target> Targets { get; private set; } = new();
+        public CapsuleCollider Collider { get; private set; }
+
+        private void Awake()
+        {
+            Collider = GetComponent<CapsuleCollider>();
+        }
+
+        public void SetAttackRadius(float radius)
+        {
+            if (Collider == null)
+            {
+                Collider = GetComponent<CapsuleCollider>();
+            }
+
+            Collider.radius = radius;
+            Collider.height = radius;
+        }
 
         private void OnTriggerEnter(Collider collider)
         {

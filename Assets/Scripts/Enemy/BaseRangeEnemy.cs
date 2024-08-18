@@ -9,6 +9,14 @@ namespace Enemy
     {
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private float bulletSpeed;
+        [SerializeField] private float attackRadius;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            BaseEnemyAttack.SetAttackRadius(attackRadius);
+        }
+
         protected override void Attack(List<Target> targets)
         {
             if (targets.Count == 0)
