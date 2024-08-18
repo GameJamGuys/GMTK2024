@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4875643657679984820}
   - component: {fileID: 7321036623796789181}
   - component: {fileID: 6380615867743490190}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: ShootingEffectTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
