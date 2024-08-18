@@ -15,6 +15,8 @@ namespace TowerSystem
             towers = new List<Tower>(GetComponentsInChildren<Tower>());
         }
 
+        public void AddTower(Tower tower) => towers.Add(tower);
+
     }
 
 }
