@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8518868137853445521, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: <BaseEffectTower>k__BackingField
+      value: 
+      objectReference: {fileID: 1285941717189505146}
     - target: {fileID: 9138810029969651840, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: towerType
       value: 2
@@ -61,3 +65,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+--- !u!114 &1285941717189505146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3422701154386809051, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+  m_PrefabInstance: {fileID: 4514706608108085409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f7a2270bc0440099bb0e40728b39f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,9 +6,6 @@ namespace TowerSystem
     public abstract class AreaEffectTower<T> : BaseEffectTower where T : EffectTowerArea
     {
         [SerializeField] private T effectTowerAreaPrefab;
-        [SerializeField] private float areaScaleDuration;
-        [SerializeField] private float areaMaxScale;
-        [SerializeField] private float areaScaleCooldown;
         
         protected T EffectTowerArea;
 
@@ -34,8 +31,8 @@ namespace TowerSystem
         {
             while (true)
             {
+                yield return new WaitForSeconds(Config.AreaScaleCooldown);
                 yield return StartCoroutine(ScaleAreaCoroutine());
-                yield return new WaitForSeconds(areaScaleCooldown);
             }
         }
 
@@ -43,11 +40,11 @@ namespace TowerSystem
         {
             float time = 0;
             EffectTowerArea.transform.localScale = Vector3.zero;
-            Vector3 endScale = Vector3.one * areaMaxScale;
+            Vector3 endScale = Vector3.one * Config.AreaMaxScale;
 
-            while (time < areaScaleDuration)
+            while (time < Config.AreaScaleDuration)
             {
-                EffectTowerArea.transform.localScale = Vector3.Lerp(EffectTowerArea.transform.localScale, endScale, time / areaScaleDuration);
+                EffectTowerArea.transform.localScale = Vector3.Lerp(EffectTowerArea.transform.localScale, endScale, time / Config.AreaScaleDuration);
                 time += Time.deltaTime;
                 yield return null;
             }
