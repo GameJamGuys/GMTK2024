@@ -37,7 +37,6 @@ namespace BulletSystem
         protected virtual IEnumerator MoveCoroutine(Vector3 targetPosition)
         {
             Vector3 direction = (targetPosition - transform.position).normalized * Speed;
-            direction.y = 0f;
 
             if (direction.x > 0 )
             {
