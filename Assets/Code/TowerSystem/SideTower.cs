@@ -1,6 +1,6 @@
 namespace TowerSystem
 {
-    public enum TowerType { Range, Melee, Support, Magnet };
+    public enum TowerType { Range, Melee, Support, Magnet, Heal };
 
     public class SideTower : Tower
     {
