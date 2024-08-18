@@ -11,16 +11,6 @@ public class ResourceUI : MonoBehaviour
 
     private void OnEnable()
     {
-        WalletData.OnChangeWallet += CheckResource;
-    }
-
-    private void OnDisable()
-    {
-        WalletData.OnChangeWallet -= CheckResource;
-    }
-
-    private void Start()
-    {
         CheckResource(type);
     }
 
