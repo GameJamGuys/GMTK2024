@@ -52,7 +52,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 6
   m_Height: 8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -326,8 +326,10 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 3
   <IsChasingGamer>k__BackingField: 0
+  <EnemyResourcesConfigs>k__BackingField: []
   bulletPrefab: {fileID: 8969309893420685051, guid: d0ac2c07657583646bb72053c27a863c, type: 3}
   bulletSpeed: 9
+  attackRadius: 8
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0

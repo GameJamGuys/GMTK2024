@@ -2681,7 +2681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
       propertyPath: waves.Array.data[0].Pulses.Array.data[0].Enemies.Array.data[3].Count
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
       propertyPath: waves.Array.data[0].Pulses.Array.data[1].Enemies.Array.data[0].Count
@@ -2846,7 +2846,7 @@ PrefabInstance:
     - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
       propertyPath: waves.Array.data[0].Pulses.Array.data[0].Enemies.Array.data[3].EnemyPrefab
       value: 
-      objectReference: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+      objectReference: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
     - target: {fileID: 1732055670918250499, guid: 1c918e12f7e12e44fa0ca4a8ee34f664, type: 3}
       propertyPath: waves.Array.data[0].Pulses.Array.data[1].Enemies.Array.data[0].EnemyPrefab
       value: 
@@ -4236,6 +4236,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 348007183085677479, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
+      propertyPath: sideTowers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 348007183085677479, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
       propertyPath: 'sideTowers.Array.data[0]'
       value: 
       objectReference: {fileID: 4415944869833727009, guid: db4eb2e309a994b97be26d6e5c756ec2, type: 3}
@@ -4243,6 +4247,10 @@ PrefabInstance:
       propertyPath: 'sideTowers.Array.data[1]'
       value: 
       objectReference: {fileID: 16184570825187592, guid: 61669e9103fe140749719cc3a54fe579, type: 3}
+    - target: {fileID: 348007183085677479, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
+      propertyPath: 'sideTowers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6789124476386060546, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
     - target: {fileID: 4912737169762434787, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
       propertyPath: m_Name
       value: Gamer
@@ -4497,6 +4505,10 @@ PrefabInstance:
     - target: {fileID: 188100364075699895, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
       propertyPath: m_Name
       value: MagnetTower Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846783455599289697, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8574922678977575831, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
       propertyPath: m_LocalPosition.x

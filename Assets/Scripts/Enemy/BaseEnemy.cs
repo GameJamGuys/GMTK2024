@@ -21,7 +21,7 @@ namespace Enemy
         public float CurrentHealth {get; protected set;}
         public event Action<BaseEnemy> OnDie;
         
-        private BaseEnemyAttack baseEnemyAttack;
+        protected BaseEnemyAttack BaseEnemyAttack;
         private BaseEnemyTargets baseEnemyTargets;
 
         protected EnemyStateMachine StateMachine;
@@ -41,10 +41,10 @@ namespace Enemy
         private Target chaisingTarget;
         
 
-        private void Awake()
+        protected virtual void Awake()
         {
             CurrentHealth = Health;
-            baseEnemyAttack = GetComponentInChildren<BaseEnemyAttack>();
+            BaseEnemyAttack = GetComponentInChildren<BaseEnemyAttack>();
             baseEnemyTargets = GetComponentInChildren<BaseEnemyTargets>();
             Rigidbody = GetComponent<Rigidbody>();
             StateMachine = new EnemyStateMachine();
@@ -76,14 +76,14 @@ namespace Enemy
 
         private void OnEnable()
         {
-            baseEnemyAttack.OnTargetCollision += ChangeStateToAttack;
+            BaseEnemyAttack.OnTargetCollision += ChangeStateToAttack;
             baseEnemyTargets.OnTargetEnter += TargetEnter;
             baseEnemyTargets.OnTargetExit += TargetExit;
         }
 
         private void OnDisable()
         {
-            baseEnemyAttack.OnTargetCollision -= ChangeStateToAttack;
+            BaseEnemyAttack.OnTargetCollision -= ChangeStateToAttack;
             baseEnemyTargets.OnTargetEnter -= TargetEnter;
             baseEnemyTargets.OnTargetExit -= TargetExit;
         }
@@ -165,9 +165,9 @@ namespace Enemy
             {
                 yield return new WaitForSeconds(AttackSpeed);
 
-                Attack(baseEnemyAttack.Targets);
+                Attack(BaseEnemyAttack.Targets);
 
-                if (baseEnemyAttack.Targets.Count == 0)
+                if (BaseEnemyAttack.Targets.Count == 0)
                 {
                     StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
                 }

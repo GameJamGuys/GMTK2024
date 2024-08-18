@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Damage;
 using UnityEngine;
 
@@ -25,7 +26,6 @@ namespace TowerSystem
             {
                 currentHealth = 0;
                 OnDie?.Invoke(this);
-                Destroy(gameObject);
             }
         }
 

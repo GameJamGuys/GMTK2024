@@ -52,8 +52,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.52424204
-  m_Height: 1.0484841
+  m_Radius: 0.6834051
+  m_Height: 1.3668102
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8450202295206067154
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3615bd1348e54cc094403f574b799402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 10
+  <Health>k__BackingField: 1000
   <Speed>k__BackingField: 5
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 5
