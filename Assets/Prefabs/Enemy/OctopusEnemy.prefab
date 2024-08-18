@@ -328,9 +328,16 @@ MonoBehaviour:
   <IsChasingGamer>k__BackingField: 0
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField:
-  - ResourcePrefab: {fileID: 0}
-    ResourceCount: 0
-    Chance: 0
+  - ResourcePrefab: {fileID: 2917310794537958685, guid: 98ea4f25ada139040b221146a2f32540, type: 3}
+    ResourceCount: 10
+    Chance: 0.4
+  - ResourcePrefab: {fileID: 8291094588202735412, guid: fef321c8e5fcefa4785ffb0fc4b4b33a, type: 3}
+    ResourceCount: 20
+    Chance: 0.3
+  - ResourcePrefab: {fileID: 1789143261321231284, guid: cb301959169138d4e922e850dbb105fe, type: 3}
+    ResourceCount: 20
+    Chance: 0.3
+  isDead: 0
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0

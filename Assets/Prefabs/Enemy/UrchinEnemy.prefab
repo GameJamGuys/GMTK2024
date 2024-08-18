@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1191305586429407276}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.4280834, y: 1.2606478, z: 2.9520555}
+  m_LocalPosition: {x: 0, y: 0.11, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
   - component: {fileID: 7200744586515686833}
+  - component: {fileID: 359646718930926403}
   m_Layer: 6
   m_Name: UrchinEnemy
   m_TagString: Untagged
@@ -327,7 +328,39 @@ MonoBehaviour:
   <AttackDamage>k__BackingField: 20
   <IsChasingGamer>k__BackingField: 0
   <AgroRange>k__BackingField: 10
-  <EnemyResourcesConfigs>k__BackingField: []
+  <EnemyResourcesConfigs>k__BackingField:
+  - ResourcePrefab: {fileID: 2917310794537958685, guid: 98ea4f25ada139040b221146a2f32540, type: 3}
+    ResourceCount: 0
+    Chance: 0.4
+  - ResourcePrefab: {fileID: 8291094588202735412, guid: fef321c8e5fcefa4785ffb0fc4b4b33a, type: 3}
+    ResourceCount: 0
+    Chance: 0.3
+  - ResourcePrefab: {fileID: 1789143261321231284, guid: cb301959169138d4e922e850dbb105fe, type: 3}
+    ResourceCount: 0
+    Chance: 0.3
+  isDead: 0
+--- !u!95 &359646718930926403
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441038293120242248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 740c2ad9ecb844db88461e4f666eafba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7052160827636199121
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,13 +386,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7052160827636199121}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!212 &64544215940112628
 SpriteRenderer:
   m_ObjectHideFlags: 0
