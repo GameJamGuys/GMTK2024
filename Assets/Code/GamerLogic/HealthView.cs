@@ -1,18 +1,33 @@
 using System;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class HealthView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textMesh;
+    private readonly float FadeOutValue = 0;
+    private readonly float FadeInValue = 1;
 
-    private Health _health;
+    [SerializeField] private Health _health;
+    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private float _changeDuration;
+    [SerializeField] private float _fadeDuration;
+    [SerializeField] private float _timerDuration;
+    
+    private Slider _slider;
+    private bool _isTimerOn;
+    private float _timer;
 
     private void OnEnable()
     {
-        if (_textMesh == null)
+        if (_health == null)
         {
-            throw new ArgumentNullException(nameof(_textMesh));
+            throw new ArgumentNullException(nameof(_health));
+        }
+
+        if (_canvasGroup == null)
+        {
+            throw new ArgumentNullException(nameof(_canvasGroup));
         }
 
         _health.HealthChanged += OnHealthChanged;
@@ -22,20 +37,31 @@ public class HealthView : MonoBehaviour
     {
         _health.HealthChanged -= OnHealthChanged;
     }
-
-    public void Init(Health health)
+    
+    private void Update()
     {
-        if (health == null)
+        if (_isTimerOn)
         {
-            throw new ArgumentNullException(nameof(health));
-        }
+            _timer -= Time.deltaTime;
 
-        _health = health;
-        enabled = true;
+            if (_timer <= 0)
+            {
+                _canvasGroup.DOFade(FadeOutValue, _fadeDuration);
+                _isTimerOn = false;
+            }
+        }
     }
 
-    private void OnHealthChanged(float health)
+    private void Awake()
     {
-        _textMesh.text = health.ToString();
+        _slider = GetComponent<Slider>();
+    }
+    
+    public void OnHealthChanged(float newValue)
+    {
+        _canvasGroup.DOFade(FadeInValue, _fadeDuration);
+        _slider.DOValue(newValue, _changeDuration);
+        _isTimerOn = true;
+        _timer = _timerDuration;
     }
 }

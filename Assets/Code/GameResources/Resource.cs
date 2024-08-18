@@ -17,6 +17,7 @@ public class Resource : MonoBehaviour
     public Types Type;
 
     public Rigidbody Rigidbody { get; private set; }
+    public int Count { get; private set; } = 1;
 
     private Transform _moveTransform;
     private float _moveForce;
@@ -38,6 +39,11 @@ public class Resource : MonoBehaviour
         _startMoveDist = data.StartMoveDistance;
         _scaleModif = data.ScaleModifier;
         _isInit = true;
+    }
+
+    public void SetCount(int count)
+    {
+        Count = count;
     }
 
     public void TargetReach()
