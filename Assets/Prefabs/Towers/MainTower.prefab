@@ -2052,7 +2052,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3441953119960132641}
   - component: {fileID: 1628335520462642824}
-  - component: {fileID: 500928853301395124}
   - component: {fileID: 6033503913143059108}
   m_Layer: 7
   m_Name: MainTower
@@ -2104,20 +2103,6 @@ CapsuleCollider:
   m_Height: 4.044943
   m_Direction: 1
   m_Center: {x: 0, y: 1.8767657, z: 0}
---- !u!114 &500928853301395124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6510020151972845825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c29a3ee59e143c9ac08dc8230149170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  towerType: 0
 --- !u!114 &6033503913143059108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2130,7 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95896a643cc545c7a8ed1c88cb92cb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
 --- !u!1 &6719279637541962933
 GameObject:
   m_ObjectHideFlags: 0
