@@ -1,21 +1,27 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Damage;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TowerSystem
 {
     public class Tower : Target
     {
         [SerializeField] private float health;
+        [field:SerializeField] public TowerUpgradeConfig UpgradeConfig {get; private set;}
         
         private float currentHealth;
-        private TowerUpgradesView upgradeCanvas;
+        private TowerUpdateView upgradeView;
+        private int uprgadeLevel;
 
-        private void Start()
+        public bool IsLastUpgrade => uprgadeLevel == UpgradeConfig.Resources.Count - 1;
+
+        protected virtual void Start()
         {
             currentHealth = health;
-            upgradeCanvas = GetComponentInChildren<TowerUpgradesView>(true);
+            GetUpgradeView();
         }
 
         public event Action<Tower> OnDie;
@@ -23,12 +29,29 @@ namespace TowerSystem
 
         public void ShowUpgrades()
         {
-            upgradeCanvas.gameObject.SetActive(true);
+            if (upgradeView == null)
+            {
+                GetUpgradeView();
+            }
+            upgradeView.gameObject.SetActive(true);
         }
         
         public void HideUpgrades()
         {
-            upgradeCanvas.gameObject.SetActive(false);
+            if (upgradeView == null)
+            {
+                GetUpgradeView();
+            }
+            upgradeView.gameObject.SetActive(false);
+        }
+        
+        public void EnableHoverUpgrades()
+        {
+            if (upgradeView == null)
+            {
+                GetUpgradeView();
+            }
+            upgradeView.gameObject.SetActive(false);
         }
 
         public override void GetDamage(float damage)
@@ -47,6 +70,17 @@ namespace TowerSystem
         {
             HealthChange?.Invoke(currentHealth);
             Debug.Log("Tower GetHeal");
-        }   
+        }
+
+        private void GetUpgradeView()
+        {
+            upgradeView = GetComponentInChildren<TowerUpdateView>(true);
+        }
+    }
+
+    [Serializable]
+    public class TowerUpgradeConfig
+    {
+        public List<TowerShop.ResCost> Resources;
     }
 }
