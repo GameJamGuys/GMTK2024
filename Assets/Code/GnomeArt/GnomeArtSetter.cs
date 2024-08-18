@@ -13,7 +13,7 @@ public class GnomeArtSetter : MonoBehaviour
     {
         foreach(SpriteCollection collection in outfits)
         {
-            switch (name)
+            switch (collection.name)
             {
                 case "body":
                     collection.rend.sprite = collection.bodyBuild[GnomeArtData.BODY];

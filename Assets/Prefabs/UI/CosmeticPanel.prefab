@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3347243868728280901}
-  - component: {fileID: 5680922106446650315}
   m_Layer: 5
   m_Name: Gnome
   m_TagString: Untagged
@@ -40,46 +39,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 59}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5680922106446650315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62647166299767042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c32edaf16e74ef084c756898c6cceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyoutfit:
-    bodyBuild:
-    - {fileID: 21300000, guid: bf8e880f4861b4869a6bbd350c8a4fbe, type: 3}
-    - {fileID: 21300000, guid: 45fe6a5b3c94447a28616629ebb9848b, type: 3}
-    image: {fileID: 1776986737664337610}
-    fit: 0
-  hatoutfit:
-    bodyBuild:
-    - {fileID: 21300000, guid: de68dd979c2bf457f972894dc86fcde0, type: 3}
-    - {fileID: 21300000, guid: 4a85cc106e24f498daa85c73c81ee1bd, type: 3}
-    - {fileID: 21300000, guid: 2319bf1b013d942c79729e8b412af524, type: 3}
-    - {fileID: 21300000, guid: 8c89416ab940d47a4a9e41cc1141c148, type: 3}
-    image: {fileID: 1502368895085690017}
-    fit: 0
-  beardoutfit:
-    bodyBuild:
-    - {fileID: 21300000, guid: 182c4e23ec1d14317bfa0d9678155c97, type: 3}
-    - {fileID: 21300000, guid: 692df11ee43054337bd22d1679a37561, type: 3}
-    - {fileID: 21300000, guid: ac1824ac7167f4641b0e332c022aae45, type: 3}
-    image: {fileID: 3220274617470863490}
-    fit: 0
-  stringoutfit:
-    bodyBuild:
-    - {fileID: 21300000, guid: 19c6cab917d424dfba0e8b24cb722865, type: 3}
-    - {fileID: 21300000, guid: ed35c6c555e8b49cdb9adc5edae8a5c1, type: 3}
-    - {fileID: 21300000, guid: 85f75d70730594490a65a59bf1ca5619, type: 3}
-    image: {fileID: 5915130136917122374}
-    fit: 0
 --- !u!1 &292176361963760453
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +234,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: DownHat
         m_Mode: 1
@@ -407,7 +366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: UpBody
         m_Mode: 1
@@ -539,7 +498,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: UpHat
         m_Mode: 1
@@ -737,6 +696,7 @@ GameObject:
   - component: {fileID: 2277995226773937549}
   - component: {fileID: 9094345414879553028}
   - component: {fileID: 1107560575011531685}
+  - component: {fileID: 371800533782666396}
   m_Layer: 5
   m_Name: CosmeticPanel
   m_TagString: Untagged
@@ -805,6 +765,47 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.3
+--- !u!114 &371800533782666396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353554836214682518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c32edaf16e74ef084c756898c6cceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyoutfit:
+    bodyBuild:
+    - {fileID: 21300000, guid: bf8e880f4861b4869a6bbd350c8a4fbe, type: 3}
+    - {fileID: 21300000, guid: 45fe6a5b3c94447a28616629ebb9848b, type: 3}
+    image: {fileID: 1776986737664337610}
+    fit: 0
+  hatoutfit:
+    bodyBuild:
+    - {fileID: 21300000, guid: de68dd979c2bf457f972894dc86fcde0, type: 3}
+    - {fileID: 21300000, guid: 4a85cc106e24f498daa85c73c81ee1bd, type: 3}
+    - {fileID: 21300000, guid: 2319bf1b013d942c79729e8b412af524, type: 3}
+    - {fileID: 21300000, guid: 8c89416ab940d47a4a9e41cc1141c148, type: 3}
+    image: {fileID: 1502368895085690017}
+    fit: 0
+  beardoutfit:
+    bodyBuild:
+    - {fileID: 21300000, guid: 182c4e23ec1d14317bfa0d9678155c97, type: 3}
+    - {fileID: 21300000, guid: 692df11ee43054337bd22d1679a37561, type: 3}
+    - {fileID: 21300000, guid: ac1824ac7167f4641b0e332c022aae45, type: 3}
+    image: {fileID: 3220274617470863490}
+    fit: 0
+  stringoutfit:
+    bodyBuild:
+    - {fileID: 21300000, guid: 19c6cab917d424dfba0e8b24cb722865, type: 3}
+    - {fileID: 21300000, guid: ed35c6c555e8b49cdb9adc5edae8a5c1, type: 3}
+    - {fileID: 21300000, guid: 85f75d70730594490a65a59bf1ca5619, type: 3}
+    image: {fileID: 5915130136917122374}
+    fit: 0
+  pause: {fileID: 0}
 --- !u!1 &4872278501942425700
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +926,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: DownBody
         m_Mode: 1
@@ -1132,7 +1133,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: UpBeard
         m_Mode: 1
@@ -1264,7 +1265,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: UpString
         m_Mode: 1
@@ -1396,7 +1397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: DownString
         m_Mode: 1
@@ -1838,7 +1839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5680922106446650315}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GnomeArtMenu, Assembly-CSharp
         m_MethodName: DownBeard
         m_Mode: 1

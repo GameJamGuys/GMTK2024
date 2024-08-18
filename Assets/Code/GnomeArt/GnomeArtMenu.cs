@@ -15,6 +15,14 @@ public class GnomeArtMenu : MonoBehaviour
     [SerializeField]
     ImageCollection stringoutfit;
 
+    [Space]
+    [SerializeField] PauseMenu pause;
+
+    private void Start()
+    {
+        pause.TogglePauseGame();
+    }
+
     public void UpBody() => SetFit(bodyoutfit, 1, OutfitType.Body);
     public void DownBody() => SetFit(bodyoutfit, -1, OutfitType.Body);
 
@@ -52,6 +60,12 @@ public class GnomeArtMenu : MonoBehaviour
                 GnomeArtData.STRINGS = work.fit;
                 break;
         }
+    }
+
+    public void ClosePanel()
+    {
+        pause.SetResume();
+        gameObject.SetActive(false);
     }
 
 }

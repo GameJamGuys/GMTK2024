@@ -5730,7 +5730,7 @@ GameObject:
   - component: {fileID: 7388436776559626885}
   - component: {fileID: 6029244306569588825}
   m_Layer: 0
-  m_Name: Beard1
+  m_Name: Beard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10690,11 +10690,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outfits:
-  - name: FrontBody
+  - name: body
     bodyBuild:
     - {fileID: 21300000, guid: bf8e880f4861b4869a6bbd350c8a4fbe, type: 3}
     - {fileID: 21300000, guid: 45fe6a5b3c94447a28616629ebb9848b, type: 3}
     rend: {fileID: 8345075262643915992}
+    fit: 0
+  - name: body
+    bodyBuild:
+    - {fileID: 21300000, guid: a6031e3c1168c49ef8d965d70b203b53, type: 3}
+    - {fileID: 21300000, guid: 7d3a0517649df463a821bcc578e2f063, type: 3}
+    rend: {fileID: 8749279734503492076}
+    fit: 0
+  - name: body
+    bodyBuild:
+    - {fileID: 21300000, guid: 5c4df62f78389404fa40f108216f92b1, type: 3}
+    - {fileID: 21300000, guid: 1050833c27877420db7f323730fc49a2, type: 3}
+    rend: {fileID: 4270881550660955602}
+    fit: 0
+  - name: hat
+    bodyBuild:
+    - {fileID: 21300000, guid: de68dd979c2bf457f972894dc86fcde0, type: 3}
+    - {fileID: 21300000, guid: 4a85cc106e24f498daa85c73c81ee1bd, type: 3}
+    - {fileID: 21300000, guid: 2319bf1b013d942c79729e8b412af524, type: 3}
+    - {fileID: 21300000, guid: 8c89416ab940d47a4a9e41cc1141c148, type: 3}
+    rend: {fileID: 997053679221279168}
+    fit: 0
+  - name: hat
+    bodyBuild:
+    - {fileID: 21300000, guid: 5e20fd112898e4e19a992290b86494cb, type: 3}
+    - {fileID: 21300000, guid: 84bfab44632674889a6a075b2e88ff04, type: 3}
+    - {fileID: 21300000, guid: 22ac55da21b014b11bb60f8f660e08f9, type: 3}
+    - {fileID: 21300000, guid: a4cb0566abf00414a9292a6242b0c6da, type: 3}
+    rend: {fileID: 8865310460001178518}
+    fit: 0
+  - name: hat
+    bodyBuild:
+    - {fileID: 21300000, guid: 5e20fd112898e4e19a992290b86494cb, type: 3}
+    - {fileID: 21300000, guid: 84bfab44632674889a6a075b2e88ff04, type: 3}
+    - {fileID: 21300000, guid: 22ac55da21b014b11bb60f8f660e08f9, type: 3}
+    - {fileID: 21300000, guid: a4cb0566abf00414a9292a6242b0c6da, type: 3}
+    rend: {fileID: 8865310460001178518}
+    fit: 0
+  - name: beard
+    bodyBuild:
+    - {fileID: 21300000, guid: 182c4e23ec1d14317bfa0d9678155c97, type: 3}
+    - {fileID: 21300000, guid: 692df11ee43054337bd22d1679a37561, type: 3}
+    - {fileID: 21300000, guid: ac1824ac7167f4641b0e332c022aae45, type: 3}
+    rend: {fileID: 6029244306569588825}
+    fit: 0
+  - name: beard
+    bodyBuild:
+    - {fileID: 21300000, guid: 182c4e23ec1d14317bfa0d9678155c97, type: 3}
+    - {fileID: 21300000, guid: 692df11ee43054337bd22d1679a37561, type: 3}
+    - {fileID: 21300000, guid: ac1824ac7167f4641b0e332c022aae45, type: 3}
+    rend: {fileID: 4624289524073925611}
+    fit: 0
+  - name: strings
+    bodyBuild:
+    - {fileID: 21300000, guid: 19c6cab917d424dfba0e8b24cb722865, type: 3}
+    - {fileID: 21300000, guid: ed35c6c555e8b49cdb9adc5edae8a5c1, type: 3}
+    - {fileID: 21300000, guid: 85f75d70730594490a65a59bf1ca5619, type: 3}
+    rend: {fileID: 7702554894678664980}
+    fit: 0
+  - name: strings
+    bodyBuild:
+    - {fileID: 21300000, guid: 19c6cab917d424dfba0e8b24cb722865, type: 3}
+    - {fileID: 21300000, guid: ed35c6c555e8b49cdb9adc5edae8a5c1, type: 3}
+    - {fileID: 21300000, guid: 85f75d70730594490a65a59bf1ca5619, type: 3}
+    rend: {fileID: 408320053751450745}
+    fit: 0
+  - name: strings
+    bodyBuild:
+    - {fileID: 21300000, guid: f735eb0bd5ad7445180755f6b25d72be, type: 3}
+    - {fileID: 21300000, guid: 39731449f1f4d454dbf06653e84d67d2, type: 3}
+    - {fileID: 21300000, guid: 5a1bd003f31a54a0f92a02a06710501b, type: 3}
+    rend: {fileID: 789530027332139873}
+    fit: 0
 --- !u!114 &8034503676581679107
 MonoBehaviour:
   m_ObjectHideFlags: 0
