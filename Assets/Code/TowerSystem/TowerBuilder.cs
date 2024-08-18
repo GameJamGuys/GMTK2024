@@ -16,7 +16,7 @@ namespace TowerSystem
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                CheckArea();
+                BuildTower(TowerType.Range);
             }
         }
 
