@@ -1445,7 +1445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510020151972845825}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
@@ -1891,6 +1891,22 @@ PrefabInstance:
     - target: {fileID: 3953600734017861331, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
       propertyPath: m_Name
       value: UpgradeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
       propertyPath: m_AnchoredPosition.y

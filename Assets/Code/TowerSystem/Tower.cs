@@ -7,9 +7,9 @@ namespace TowerSystem
 {
     public class Tower : Target
     {
-        [SerializeField] private float health;
+        [SerializeField] protected float health;
         
-        private float currentHealth;
+        protected float currentHealth;
         private TowerUpgradesView upgradeCanvas;
 
         private void Start()
