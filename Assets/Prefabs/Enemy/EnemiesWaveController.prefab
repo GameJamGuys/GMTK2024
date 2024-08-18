@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3c6d06898843418240bb0805e8d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesConfig: {fileID: 11400000, guid: 72e685692f5ee49d49b03e34648b60e0, type: 2}
+  wavesConfig: {fileID: 11400000, guid: 675144f0e629ef641ae5671c80f157d7, type: 2}
   enemySpawner: {fileID: 4560517531430553433}
 --- !u!1001 &390785930887673094
 PrefabInstance:

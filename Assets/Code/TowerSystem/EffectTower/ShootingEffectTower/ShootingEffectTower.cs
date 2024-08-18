@@ -9,9 +9,6 @@ namespace TowerSystem
     public class ShootingEffectTower : BaseEffectTower
     {
         [SerializeField] private Bullet BulletPrefab;
-        [SerializeField] private float bulletSpeed;
-        [SerializeField] private float bulletAttackSpeed;
-        [SerializeField] private float bulletDamage;
 
         private BaseEnemy targetEnemy;
         private List<BaseEnemy> enemiesInRange = new();
@@ -22,7 +19,7 @@ namespace TowerSystem
         private void Start()
         {
             isReady = true;
-            timer = bulletAttackSpeed;
+            timer = Config.BulletAttackSpeed;
         }
 
         private void FixedUpdate()
@@ -38,7 +35,7 @@ namespace TowerSystem
                 if(timer <= 0)
                 {
                     isReady = true;
-                    timer = bulletAttackSpeed;
+                    timer = Config.BulletAttackSpeed;
                 }
             }
         }
@@ -46,7 +43,7 @@ namespace TowerSystem
         public override void UseEffect()
         {
             isReady = false;
-            Instantiate(BulletPrefab, transform.position, Quaternion.identity).StartMove(bulletDamage, bulletSpeed, targetEnemy.transform.position);
+            Instantiate(BulletPrefab, transform.position, Quaternion.identity).StartMove(Config.BulletDamage, Config.BulletSpeed, targetEnemy.transform.position);
         }
 
         private void OnTriggerEnter(Collider collider)
