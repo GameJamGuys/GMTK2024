@@ -1392,13 +1392,37 @@ MonoBehaviour:
     Levels:
     - Resources: []
       Config: {fileID: 11400000, guid: 4863f838751327e41a056276fe4ab70f, type: 2}
-    - Resources: []
+    - Resources:
+      - type: 2
+        amount: 200
+      - type: 1
+        amount: 100
+      - type: 0
+        amount: 100
       Config: {fileID: 11400000, guid: 78e8caff1d877ae4ea1efbbb7d4826d5, type: 2}
-    - Resources: []
+    - Resources:
+      - type: 2
+        amount: 600
+      - type: 1
+        amount: 200
+      - type: 0
+        amount: 500
       Config: {fileID: 11400000, guid: e4d913a1b0d7d0440a67cadf01871212, type: 2}
-    - Resources: []
+    - Resources:
+      - type: 2
+        amount: 1800
+      - type: 1
+        amount: 400
+      - type: 0
+        amount: 2500
       Config: {fileID: 11400000, guid: c4d4ec2631f3f4645bfd60b41de5d95a, type: 2}
-    - Resources: []
+    - Resources:
+      - type: 2
+        amount: 5500
+      - type: 1
+        amount: 800
+      - type: 0
+        amount: 3000
       Config: {fileID: 11400000, guid: 41c30082f8cdbe84faf0b537f7f2e6cd, type: 2}
   <EffectTower>k__BackingField: {fileID: 5204121680997772630}
   towerLevelVisual: {fileID: 3245573991683155246}
