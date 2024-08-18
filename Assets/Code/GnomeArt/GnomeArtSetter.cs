@@ -7,11 +7,23 @@ public class GnomeArtSetter : MonoBehaviour
     [SerializeField]
     List<SpriteCollection> outfits;
 
+    public PauseMenu pause;
+
     //public void ChangeOutfit()
 
-    private void Start()
+    private void OnEnable()
     {
-        foreach(SpriteCollection collection in outfits)
+        pause.OnGameUnpaused += SetOutfit;
+    }
+
+    private void OnDisable()
+    {
+        pause.OnGameUnpaused -= SetOutfit;
+    }
+
+    public void SetOutfit()
+    {
+        foreach (SpriteCollection collection in outfits)
         {
             switch (collection.name)
             {
@@ -28,7 +40,7 @@ public class GnomeArtSetter : MonoBehaviour
                     collection.rend.sprite = collection.bodyBuild[GnomeArtData.STRINGS];
                     break;
             }
-                
+
         }
     }
 

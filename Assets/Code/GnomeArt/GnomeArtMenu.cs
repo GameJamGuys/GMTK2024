@@ -21,6 +21,11 @@ public class GnomeArtMenu : MonoBehaviour
     private void Start()
     {
         pause.TogglePauseGame();
+
+        bodyoutfit.image.sprite = bodyoutfit.bodyBuild[GnomeArtData.BODY];
+        hatoutfit.image.sprite = hatoutfit.bodyBuild[GnomeArtData.HAT];
+        beardoutfit.image.sprite = beardoutfit.bodyBuild[GnomeArtData.BEARD];
+        stringoutfit.image.sprite = stringoutfit.bodyBuild[GnomeArtData.STRINGS];
     }
 
     public void UpBody() => SetFit(bodyoutfit, 1, OutfitType.Body);
