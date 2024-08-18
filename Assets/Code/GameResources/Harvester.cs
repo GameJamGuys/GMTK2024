@@ -57,7 +57,7 @@ public class Harvester : MonoBehaviour
                 _health.GetHeal();
                 resource.TargetReach();
                 return;
-            default:
+            default:   
                 WalletData.AddResource(resource.Type);
                 break;
         }
@@ -73,7 +73,7 @@ public class Harvester : MonoBehaviour
             _resources.Add(resource.Type, startValue);
         }
 
-        //DisplayDictionary();
+        DisplayDictionary();
         resource.TargetReach();
     }
 

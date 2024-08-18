@@ -17,10 +17,12 @@ namespace TowerSystem
         }
 
         public event Action<Tower> OnDie;
+        public event Action<float> HealthChange;
 
         public override void GetDamage(float damage)
         {
             currentHealth -= damage;
+            HealthChange?.Invoke(currentHealth);
 
             if (currentHealth <= 0)
             {
@@ -31,6 +33,7 @@ namespace TowerSystem
 
         public void GetHeal(float heal)
         {
+            HealthChange?.Invoke(currentHealth);
             Debug.Log("Tower GetHeal");
         }
     }
