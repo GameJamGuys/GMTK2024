@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace TowerSystem
 {
-    [RequireComponent(typeof(SphereCollider))]
-    public class AreaDamage: MonoBehaviour
+    public class EffectTowerAreaDamage: EffectTowerArea
     {
         private float damage;
         private HashSet<BaseEnemy> enemies = new();
@@ -16,13 +15,12 @@ namespace TowerSystem
             Drop();
         }
 
-        public void Drop()
+        public override void Drop()
         {
             enemies.Clear();
-            enemies = new();
         }
 
-        private void OnTriggerEnter(Collider collider)
+        protected override void TriggerAction(Collider collider)
         {
             if (collider.TryGetComponent(out BaseEnemy enemy))
             {

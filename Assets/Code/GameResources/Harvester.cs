@@ -36,9 +36,13 @@ public class Harvester : MonoBehaviour
     {
         if (other.TryGetComponent<Resource>(out Resource resource))
         {
-            resource.Init(this);
-            //Debug.Log("Staying");
-            
+            resource.Init(new Resource.ResourceInitData()
+            {
+                MoveTransform = transform,
+                MoveForce = MoveForce,
+                StartMoveDistance = StartMoveDistance,
+                ScaleModifier = ScaleModifier
+            });
         }
     }
 
