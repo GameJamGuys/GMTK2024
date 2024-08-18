@@ -60,7 +60,7 @@ namespace Enemy
             {
                 if (config.Chance >= Random.Range(0, 1))
                 {
-                    Instantiate(config.ResourcePrefab, transform.position, Quaternion.identity);
+                    Instantiate(config.ResourcePrefab, transform.position, Quaternion.identity).SetCount(config.ResourceCount);
                 }
             }
         }

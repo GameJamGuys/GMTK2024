@@ -58,7 +58,7 @@ public class Harvester : MonoBehaviour
                 resource.TargetReach();
                 return;
             default:   
-                WalletData.AddResource(resource.Type);
+                WalletData.AddResource(resource.Type, resource.Count);
                 break;
         }
 
