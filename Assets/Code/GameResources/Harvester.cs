@@ -73,7 +73,7 @@ public class Harvester : MonoBehaviour
             _resources.Add(resource.Type, startValue);
         }
 
-        //DisplayDictionary();
+        DisplayDictionary();
         resource.TargetReach();
     }
 

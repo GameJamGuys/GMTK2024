@@ -33,6 +33,7 @@ namespace TowerSystem
 
         public void GetHeal(float heal)
         {
+            HealthChange?.Invoke(currentHealth);
             Debug.Log("Tower GetHeal");
         }
     }
