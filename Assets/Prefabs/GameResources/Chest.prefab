@@ -211,7 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a1f5d4bf5a14fa5b6f12d00e3e3740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnemyResourcesConfigs>k__BackingField: []
+  <EnemyResourcesConfigs>k__BackingField:
+  - ResourcePrefab: {fileID: 0}
+    ResourceCount: 0
+    Chance: 0
 --- !u!54 &8835443612605888430
 Rigidbody:
   m_ObjectHideFlags: 0

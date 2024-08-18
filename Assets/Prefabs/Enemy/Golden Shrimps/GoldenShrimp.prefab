@@ -242,6 +242,8 @@ MonoBehaviour:
   <IsChasingGamer>k__BackingField: 1
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField: []
+  isDead: 0
+  chest: {fileID: 1798272452282348793, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
 --- !u!95 &7619118997918224912
 Animator:
   serializedVersion: 7
