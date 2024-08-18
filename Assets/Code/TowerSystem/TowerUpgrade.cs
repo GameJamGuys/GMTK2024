@@ -26,6 +26,7 @@ namespace TowerSystem
             {
                 if (tower.IsLastUpgrade)
                 {
+                    tower.HideUpgrades();
                     continue;
                 }
 
