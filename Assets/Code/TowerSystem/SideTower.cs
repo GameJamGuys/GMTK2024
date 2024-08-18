@@ -4,9 +4,8 @@ namespace TowerSystem
 
     public class SideTower : Tower
     {
-       
         public TowerType towerType;
 
-
+        
     }
 }

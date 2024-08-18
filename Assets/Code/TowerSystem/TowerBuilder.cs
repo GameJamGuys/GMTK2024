@@ -6,7 +6,7 @@ namespace TowerSystem
 {
     public class TowerBuilder : StaticInstance<TowerBuilder>
     {
-        [SerializeField] PlayerInputRouter player;
+        [SerializeField] Gamer player;
         [SerializeField] GnomeVisual visual;
         [Space]
         [SerializeField]

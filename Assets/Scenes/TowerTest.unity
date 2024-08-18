@@ -738,6 +738,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6010779988380946123, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
   m_PrefabInstance: {fileID: 4933732409724757733}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &859040900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4989655443562152302, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
+  m_PrefabInstance: {fileID: 4933732409724757733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de5082469018b64598a741395f5ae98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &945778720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1604,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 348007183085677479, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 859040900}
     - target: {fileID: 2403261017209376956, guid: 9e64e8f778ae82f42ac1ed27939af840, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.8
