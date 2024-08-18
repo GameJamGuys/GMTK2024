@@ -992,7 +992,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c29a3ee59e143c9ac08dc8230149170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  <UpgradeConfig>k__BackingField:
+    Levels:
+    - Resources: []
+      Config: {fileID: 11400000, guid: 995b2488a98a3ac41a717d99f5cd9b14, type: 2}
+    - Resources: []
+      Config: {fileID: 11400000, guid: f6d5ed9d91940304f95eb812ead0214c, type: 2}
+  <EffectTower>k__BackingField: {fileID: 7846648974188508282}
+  towerLevelVisual: {fileID: 2209119891283062757}
   towerType: 0
 --- !u!1 &7197844712472340392
 GameObject:
@@ -1278,6 +1285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5282710802124552826}
+  - component: {fileID: 2209119891283062757}
   m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
@@ -1303,6 +1311,21 @@ Transform:
   - {fileID: 214194498437756306}
   m_Father: {fileID: 1477031648521703092}
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!114 &2209119891283062757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858511954516904880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bf034246904f2dacd3c5b20b365130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelObjects:
+  - {fileID: 318768992134321955}
+  - {fileID: 974428400180235590}
 --- !u!1 &8511215474908127761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,10 +1392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f7a2270bc0440099bb0e40728b39f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: 995b2488a98a3ac41a717d99f5cd9b14, type: 2}
   BulletPrefab: {fileID: 278665198872994135, guid: 1dffbb3c228c92a4d8d243b29cb5b098, type: 3}
-  bulletSpeed: 9
-  bulletAttackSpeed: 0.2
-  bulletDamage: 10
 --- !u!1 &9162690826921366897
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,12 +10,6 @@ namespace TowerSystem
             TowerManager.Instance.OnNewTower += CheckUpgrade;
         }
 
-        private void OnDisable()
-        {
-            WalletData.OnChangeWallet -= CheckUpgrade;
-            TowerManager.Instance.OnNewTower -= CheckUpgrade;
-        }
-
         private void CheckUpgrade(int value)
         {
             CheckUpgrade();
@@ -35,7 +29,7 @@ namespace TowerSystem
                     continue;
                 }
 
-                if (CanUpgrade(tower))
+                if (tower.CanUpgrade())
                 {
                     tower.ShowUpgrades();
                 }
@@ -44,19 +38,6 @@ namespace TowerSystem
                     tower.HideUpgrades();
                 }
             }
-        }
-
-        private bool CanUpgrade(Tower tower)
-        {
-            foreach (var resource in tower.UpgradeConfig.Resources)
-            {
-                if (WalletData.GetResourceCount(resource.type) < resource.amount)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }
