@@ -299,13 +299,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 20
-  <Speed>k__BackingField: 0.96
+  <Speed>k__BackingField: 1
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 10
   <IsChasingGamer>k__BackingField: 0
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField:
   - ResourcePrefab: {fileID: 6072106964333509425, guid: 0cd06c3b825714c23ad0aa009df76d87, type: 3}
+    ResourceCount: 0
     Chance: 0.541
 --- !u!136 &3140419198242742003
 CapsuleCollider:

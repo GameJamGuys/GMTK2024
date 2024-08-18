@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 10
-  <Speed>k__BackingField: 5
+  <Speed>k__BackingField: 2
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 5
   <IsChasingGamer>k__BackingField: 1
