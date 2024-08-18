@@ -28,8 +28,7 @@ namespace TowerSystem
             {
                 return;
             }
-            Vector3 direction = (targetEnemy.transform.position - transform.position).normalized;
-            Instantiate(BulletPrefab, transform.position, Quaternion.identity).StartMove(bulletDamage, bulletSpeed, direction);
+            Instantiate(BulletPrefab, transform.position, Quaternion.identity).StartMove(bulletDamage, bulletSpeed, targetEnemy.transform.position);
         }
 
         private void OnTriggerEnter(Collider collider)
@@ -80,8 +79,16 @@ namespace TowerSystem
         {
             while (true)
             {
-                UseEffect();
-                yield return new WaitForSeconds(bulletAttackSpeed);
+                if (targetEnemy != null)
+                {
+                    UseEffect();
+                    yield return new WaitForSeconds(bulletAttackSpeed);
+                }
+                else
+                {
+                    yield return null;
+                }
+                
             }
         }
     }

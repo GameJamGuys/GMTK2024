@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Damage;
 using UnityEngine;
@@ -9,13 +8,13 @@ namespace BulletSystem
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
 
-        private float damage;
-        private float speed;
+        protected float Damage;
+        protected float Speed;
 
         public void StartMove(float damage, float speed, Vector3 targetPosition)
         {
-            this.damage = damage;
-            this.speed = speed;
+            Damage = damage;
+            Speed = speed;
             StartCoroutine(MoveCoroutine(targetPosition));
             StartCoroutine(DeathCoroutine());
         }
@@ -24,7 +23,7 @@ namespace BulletSystem
         {
             if (collider.TryGetComponent(out Target target))    
             {
-                target.GetDamage(damage);
+                target.GetDamage(Damage);
                 Destroy(gameObject);
             }
         }
@@ -37,7 +36,7 @@ namespace BulletSystem
 
         protected virtual IEnumerator MoveCoroutine(Vector3 targetPosition)
         {
-            Vector3 direction = (targetPosition - transform.position).normalized * speed;
+            Vector3 direction = (targetPosition - transform.position).normalized * Speed;
             direction.y = 0f;
 
             if (direction.x > 0 )
@@ -49,7 +48,7 @@ namespace BulletSystem
 
             while (true)
             {
-                transform.position += direction * Time.deltaTime * speed;
+                transform.position += direction * Time.deltaTime * Speed;
                 yield return null;
             }
         }
