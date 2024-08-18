@@ -19,12 +19,23 @@ namespace Enemy
             points = GetComponentsInChildren<Transform>().ToList();
         }
 
-        public void Spawn()
+        private void Spawn()
+        {
+            Spawn(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], GetRandomSpawnPosition());
+        }
+
+        public Vector3 GetRandomSpawnPosition()
         {
             var position = points[Random.Range(0, points.Count)].position;
-            position.y = 0;
-            var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], position, Quaternion.identity);
+            position.y = 0.3f;
+            return position;
+        }
+
+        public void Spawn(BaseEnemy enemyPrefab, Vector3 position)
+        {
+            var enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
             enemy.SetDefaultTarget(mainTowerTarget);
+            enemy.OnDie += EnemyDied;
             enemies.Add(enemy);
         }
 
@@ -35,6 +46,14 @@ namespace Enemy
             {
                 Spawn();
             }
+        }
+
+        private void EnemyDied(BaseEnemy enemy)
+        {
+            enemy.OnDie -= EnemyDied;
+            enemy.SpawnResources();
+            enemies.Remove(enemy);
+            Destroy(enemy.gameObject);
         }
     }
 }
