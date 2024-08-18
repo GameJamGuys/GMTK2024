@@ -20,10 +20,43 @@ namespace TowerSystem
         [Space]
         [SerializeField]
         List<TowerCost> towerCosts;
+        
+        
+        private TowerCost GetTowerCost(TowerType type)
+        {
+            foreach (TowerCost cost in towerCosts)
+            {
+                if (cost.towerType == type)
+                {
+                    return cost;
+                }
+            }
+            return null;
+        }
 
         public void BuildTower(TowerType type)
         {
+            CloseShop();
 
+            TowerCost cost = GetTowerCost(type);
+
+            foreach (ResCost resCost in cost.resources)
+            {
+                WalletData.RemoveResource(resCost.type, resCost.amount);
+            }
+
+            TowerBuilder.Instance.BuildTower(type);
+        }
+        public bool CheckTowerCost(TowerType type)
+        {
+            TowerCost cost = GetTowerCost(type);
+            foreach(ResCost resCost in cost.resources)
+            {
+                int wallet = WalletData.GetResourceCount(resCost.type);
+                if (wallet <= resCost.amount)
+                    return false;
+            }
+            return true;
         }
 
         public void CloseShop()
