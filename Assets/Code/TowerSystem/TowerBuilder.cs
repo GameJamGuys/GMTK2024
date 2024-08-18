@@ -60,6 +60,7 @@ namespace TowerSystem
         private async void StartBuildTower(SideTower towerPrefab)
         {
             player.enabled = false;
+            visual.StartBuild();
             await UniTask.Delay(1000);
             Tower newTower = Instantiate(towerPrefab, transform.position, Quaternion.identity, TowerManager.Instance.transform);
             TowerManager.Instance.AddTower(newTower);
