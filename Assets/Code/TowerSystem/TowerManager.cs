@@ -4,7 +4,7 @@ using System;
 
 namespace TowerSystem
 {
-    [DefaultExecutionOrder(-10)]
+    [DefaultExecutionOrder(-20)]
     public class TowerManager : StaticInstance<TowerManager>
     {
         [SerializeField]
