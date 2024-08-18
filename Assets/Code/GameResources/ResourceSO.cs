@@ -15,5 +15,6 @@ public enum ResourceType
     Attack,
     Support,
     Build,
-    Heal
+    Heal,
+    Note
 }
