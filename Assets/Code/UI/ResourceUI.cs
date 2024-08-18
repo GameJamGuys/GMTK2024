@@ -30,6 +30,7 @@ public class ResourceUI : MonoBehaviour
         {
             icon.DOShakeScale(0.1f, 1f, 5, 30);
             count.text = WalletData.GetResourceCount(type).ToString();
+            icon.DOScale(new Vector3(1f, 1f, 1f), .1f);
         }
 
     }
