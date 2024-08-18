@@ -32,6 +32,7 @@ namespace TowerSystem
 
             foreach(Collider hit in hits)
             {
+                print(hit.name);
                 if (hit.TryGetComponent(out BuildArea area))
                 {
                     if(area.AreaType == BuildArea.Type.Inner)
@@ -40,15 +41,22 @@ namespace TowerSystem
                         ShowAndClose(hintClose);
                         return false;
                     }
-                       
+                }
+            }
+
+            foreach (Collider hit in hits)
+            {
+                print(hit.name);
+                if (hit.TryGetComponent(out BuildArea area))
+                {
                     if (area.AreaType == BuildArea.Type.Outer)
                     {
                         print("Nice spot");
                         return true;
                     }
-                        
                 }
             }
+
             print("Too far");
             ShowAndClose(hintFar);
             return false;

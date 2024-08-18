@@ -18,9 +18,16 @@ public class PauseMenu : MonoBehaviour
             TowerShop.Instance.OpenShop();
     }
 
+    public void SetResume()
+    {
+        isGamePaused = true;
+        TogglePauseGame();
+    }
+
     public void TogglePauseGame()
     {
         isGamePaused = !isGamePaused;
+        print("Game pause " + isGamePaused);
         if (isGamePaused)
         {
             Time.timeScale = 0f;
