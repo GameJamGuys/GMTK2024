@@ -27,8 +27,7 @@ namespace TowerSystem
         public void IncreaseMaxHealth(uint modifier)
         {
             float newScale = _startScale + _scaleModifier;
-            health += modifier;
-            currentHealth = health;
+            currentHealth = GetMaxHealth() + modifier;
             _healthView.transform.DOScaleX(newScale, Duration);
         }
     }

@@ -119,6 +119,11 @@ namespace TowerSystem
             Debug.Log("Tower GetHeal");
         }
 
+        public float GetMaxHealth()
+        {
+            return UpgradeConfig.Levels[upgradeLevel].Config.Health;
+        }
+
         private void GetUpgradeView()
         {
             UpgradeView = GetComponentInChildren<TowerUpdateView>(true);
