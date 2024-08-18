@@ -23,8 +23,6 @@ public class GnomeVisual : MonoBehaviour
         build.SetActive(false);
     }
 
-
-
     private void Update()
     {
         anim.SetBool("isWalk", gamer.IsWalking());

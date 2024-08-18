@@ -9,7 +9,7 @@ public class Harvester : MonoBehaviour
     [SerializeField] private float _scaleModifier;
     [SerializeField] private Health _health;
 
-    private Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
+    private Dictionary<Resource.Types, int> _resources = new Dictionary<Resource.Types, int>();
     [SerializeField] private ColliderEventHandler _colliderEventHandler;
 
     public float MoveForce => _moveForce;
@@ -47,7 +47,7 @@ public class Harvester : MonoBehaviour
     {
         int startValue = 1;
 
-        if (resource.Data.Type == ResourceType.Heal)
+        if (resource.Type == Resource.Types.Heal)
         {
             Debug.Log("Collided with heal");
             _health.GetHeal();
@@ -55,15 +55,15 @@ public class Harvester : MonoBehaviour
             return;
         }
 
-        if (_resources.ContainsKey(resource.Data.Type))
+        if (_resources.ContainsKey(resource.Type))
         {
-            int currentValue = _resources[resource.Data.Type];
+            int currentValue = _resources[resource.Type];
             currentValue++;
-            _resources[resource.Data.Type] = currentValue;
+            _resources[resource.Type] = currentValue;
         }
         else
         {
-            _resources.Add(resource.Data.Type, startValue);
+            _resources.Add(resource.Type, startValue);
         }
 
         //DisplayDictionary();
@@ -74,7 +74,7 @@ public class Harvester : MonoBehaviour
     {
         Debug.Log("Dictionary:");
 
-        foreach (ResourceType resourceType in _resources.Keys)
+        foreach (Resource.Types resourceType in _resources.Keys)
         {
             Debug.Log($"{resourceType} : {_resources[resourceType]}");
         }
