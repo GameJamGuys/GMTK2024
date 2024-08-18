@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using BulletSystem;
 using Enemy;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 
 namespace TowerSystem
 {
@@ -30,7 +28,9 @@ namespace TowerSystem
         private void FixedUpdate()
         {
             if (isReady && targetEnemy != null)
+            {
                 UseEffect();
+            }
 
             if(!isReady)
             {
@@ -51,11 +51,14 @@ namespace TowerSystem
 
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.TryGetComponent(out BaseEnemy enemy))
+            if (collider.TryGetComponent(out BaseEnemy enemy) && !enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Add(enemy);
 
-                TryChangeTarget(enemy);
+                if (targetEnemy == null)
+                {
+                    TryChangeTarget();
+                }
             }
         }
         
@@ -65,7 +68,11 @@ namespace TowerSystem
             {
                 enemiesInRange.Remove(enemy);
 
-                TryChangeTarget();
+                if (enemy == targetEnemy)
+                {
+                    targetEnemy.OnDie -= TryChangeTarget;
+                    targetEnemy = null;
+                }
             }
         }
         
@@ -75,23 +82,28 @@ namespace TowerSystem
 
             foreach (var baseEnemy in enemiesInRange)
             {
-                if (baseEnemy == null) continue;
+                if (baseEnemy == null || baseEnemy.gameObject == null) continue;
                 if (potentialTarget == null || Vector3.Distance(baseEnemy.transform.position, transform.position) < Vector3.Distance(potentialTarget.transform.position, transform.position))
                 {
                     potentialTarget = baseEnemy;
                 }
             }
 
-            targetEnemy = potentialTarget;
+            if (potentialTarget != null)
+            {
+                if (targetEnemy != null)
+                {
+                    targetEnemy.OnDie -= TryChangeTarget;
+                }
+                targetEnemy = potentialTarget;
+                targetEnemy.OnDie += TryChangeTarget;
+            }
         }
 
         private void TryChangeTarget(BaseEnemy enemy)
         {
-
-            if (targetEnemy == null || Vector3.Distance(enemy.transform.position, transform.position) < Vector3.Distance(targetEnemy.transform.position, transform.position))
-            {
-                targetEnemy = enemy;
-            }
+            enemiesInRange.Remove(enemy);
+            TryChangeTarget();
         }
 
     }
