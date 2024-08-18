@@ -20,7 +20,7 @@ MonoBehaviour:
         Count: 15
       - EnemyPrefab: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
         Count: 5
-    - PulseCooldown: 0
+    - PulseCooldown: 20
       Enemies:
       - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
         Count: 10
@@ -28,3 +28,11 @@ MonoBehaviour:
         Count: 10
       - EnemyPrefab: {fileID: 1577591104694286916, guid: f47cc221772e98843a4629bbeeaa1ab7, type: 3}
         Count: 5
+    - PulseCooldown: 0
+      Enemies:
+      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
+        Count: 30
+      - EnemyPrefab: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
+        Count: 30
+      - EnemyPrefab: {fileID: 1577591104694286916, guid: f47cc221772e98843a4629bbeeaa1ab7, type: 3}
+        Count: 30
