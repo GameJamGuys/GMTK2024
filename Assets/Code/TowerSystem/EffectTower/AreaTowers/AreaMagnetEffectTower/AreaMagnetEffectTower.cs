@@ -4,7 +4,7 @@ namespace TowerSystem
     {
         protected override void Start()
         {
-            base.Start(); 
+            base.Start();  
             EffectTowerArea.Init(); 
             UseEffect();
         }

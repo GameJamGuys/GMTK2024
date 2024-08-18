@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TowerSystem;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GamerTowerTrigger : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GamerTowerTrigger : MonoBehaviour
         {
             oldPosition = transform.position;
             UpdateActiveTower();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            UpgradeCurrentTower();
         }
     }
 
@@ -29,15 +35,20 @@ public class GamerTowerTrigger : MonoBehaviour
             }
         }
 
-        if (activeTower != null)
+        if (nearestTower == activeTower)
         {
-            activeTower.HideUpgrades();
+            return;
         }
 
         if (nearestTower != null)
         {
+            if (activeTower != null)
+            {
+                activeTower.UpgradeView.UnHover();
+            }
+
             activeTower = nearestTower;
-            activeTower.ShowUpgrades();
+            activeTower.UpgradeView.Hover();
         }
     }
 
@@ -55,7 +66,24 @@ public class GamerTowerTrigger : MonoBehaviour
         if (collider.TryGetComponent(out Tower tower))
         {
             towers.Remove(tower);
+
+            if (tower == activeTower)
+            {
+                activeTower.UpgradeView.UnHover();
+                activeTower = null;
+            }
+
             UpdateActiveTower();
         }
+    }
+
+    private void UpgradeCurrentTower()
+    {
+        if (activeTower == null)
+        {
+            return;
+        }
+        
+        activeTower.UpgradeLevel();
     }
 }

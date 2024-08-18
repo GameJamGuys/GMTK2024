@@ -50,6 +50,11 @@ namespace TowerSystem
             OnNewTower?.Invoke(towers.Count);
         }
 
+        public List<Tower> GetTowers()
+        {
+            return towers;
+        } 
+
         private void TowerDie(Tower tower)
         {
             tower.OnDie -= TowerDie;
