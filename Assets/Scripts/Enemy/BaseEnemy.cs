@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Damage;
@@ -14,6 +15,9 @@ namespace Enemy
         [field:SerializeField] public float AttackDamage {get; protected set;}
         [field:SerializeField] public bool IsChasingGamer {get; protected set;}
 
+        public float CurrentHealth {get; protected set;}
+        public event Action<BaseEnemy> OnDie;
+        
         private BaseEnemyAttack baseEnemyAttack;
         private BaseEnemyTargets baseEnemyTargets;
 
@@ -42,6 +46,17 @@ namespace Enemy
             StateMachine = new EnemyStateMachine();
             StateMachine.Init();
             StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
+        }
+
+        public void GetDamage(float damage)
+        {
+            CurrentHealth -= damage;
+
+            if (CurrentHealth <= 0)
+            {
+                CurrentHealth = 0;
+                OnDie?.Invoke(this);
+            }
         }
 
         private void OnEnable()
