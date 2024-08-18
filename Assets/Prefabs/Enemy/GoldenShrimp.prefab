@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
   - component: {fileID: -6605813262477887225}
+  - component: {fileID: 7619118997918224912}
   m_Layer: 6
   m_Name: GoldenShrimp
   m_TagString: Untagged
@@ -241,6 +242,28 @@ MonoBehaviour:
   <IsChasingGamer>k__BackingField: 1
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField: []
+--- !u!95 &7619118997918224912
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441038293120242248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f7c7913c11f14d308c3dd08995426b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6654093448208159871
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +290,7 @@ Transform:
   m_GameObject: {fileID: 6654093448208159871}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.053}
+  m_LocalPosition: {x: 0, y: 0.02, z: -0.164}
   m_LocalScale: {x: 0.6, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -353,13 +376,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8706076571607071849}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
   m_LocalPosition: {x: 0, y: 0.395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5512277712661831859}
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!212 &8229008401550244753
 SpriteRenderer:
   m_ObjectHideFlags: 0
