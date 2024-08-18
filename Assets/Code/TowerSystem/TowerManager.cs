@@ -29,10 +29,16 @@ namespace TowerSystem
 
         public void AddTower(Tower tower)
         {
+            tower.OnDie += TowerDie;
             towers.Add(tower);
             OnNewTower?.Invoke(towers.Count);
         }
 
+        private void TowerDie(Tower tower)
+        {
+            tower.OnDie -= TowerDie;
+            towers.Remove(tower);
+        }
     }
 
 }

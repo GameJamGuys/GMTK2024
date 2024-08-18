@@ -43,6 +43,7 @@ namespace Enemy
 
         private void Awake()
         {
+            CurrentHealth = Health;
             baseEnemyAttack = GetComponentInChildren<BaseEnemyAttack>();
             baseEnemyTargets = GetComponentInChildren<BaseEnemyTargets>();
             Rigidbody = GetComponent<Rigidbody>();
