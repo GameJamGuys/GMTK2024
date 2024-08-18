@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6605813262477887225, guid: 19e5f37c7e5bcbe43b9a4cca53d286d9, type: 3}
+      propertyPath: chest
+      value: 
+      objectReference: {fileID: 5612211538876680726, guid: ad1b69895c4811543be07bb8b7af6dfc, type: 3}
     - target: {fileID: 5512277712661831859, guid: 19e5f37c7e5bcbe43b9a4cca53d286d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6441038293120242248, guid: 19e5f37c7e5bcbe43b9a4cca53d286d9, type: 3}
       propertyPath: m_Name
-      value: GoldenShrimp
+      value: GShrimp_W5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
