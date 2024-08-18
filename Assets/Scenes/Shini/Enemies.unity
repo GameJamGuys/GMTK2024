@@ -1275,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEffectTower
       objectReference: {fileID: 0}
+    - target: {fileID: 4788888367638431461, guid: 03acbf6f26984234aa9bb18f87850f8e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4875643657679984820, guid: 03acbf6f26984234aa9bb18f87850f8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
