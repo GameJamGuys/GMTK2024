@@ -17,6 +17,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField] private Image[] _frames;
     [SerializeField] private CanvasGroup _blackout;
     [SerializeField] private float _fadeDuration;
+    [SerializeField] private SuperGodlyCutsceneClass _animation;
 
     private int _currentFrameIndex;
     private float _startScale;
@@ -60,14 +61,15 @@ public class Cutscene : MonoBehaviour
 
     private void OnStart()
     {
-        _startButton.gameObject.SetActive(false);
+        /*_startButton.gameObject.SetActive(false);
         _blackout.DOFade(FadeIn, _fadeDuration).OnComplete(() =>
         {
             _blackout.alpha = 0f;
             _frames[_currentFrameIndex].gameObject.SetActive(true);
             _currentFrameIndex++;
             _continueButton.transform.DOScale(NewScale, ScaleDuration);
-        });
+        });*/
+        _animation.gameObject.SetActive(true);
     }
 
     private void OnContinue()
