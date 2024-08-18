@@ -326,6 +326,7 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 1.3
   <AttackDamage>k__BackingField: 40
   <IsChasingGamer>k__BackingField: 0
+  <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField:
   - ResourcePrefab: {fileID: 0}
     Chance: 0

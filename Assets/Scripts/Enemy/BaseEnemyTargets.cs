@@ -13,10 +13,27 @@ namespace Enemy
         
         public List<Target> Targets { get; private set; } = new ();
         public Target DefaultTarget {get; private set;}
+        
+        public SphereCollider Collider { get; private set; }
+
+        private void Awake()
+        {
+            Collider = GetComponent<SphereCollider>();
+        }
 
         public void SetDefaultTarget(Target target)
         {
             DefaultTarget = target;
+        }
+        
+        public void SetAttackRadius(float radius)
+        {
+            if (Collider == null)
+            {
+                Collider = GetComponent<SphereCollider>();
+            }
+
+            Collider.radius = radius;
         }
         
         private void OnTriggerEnter(Collider collider)

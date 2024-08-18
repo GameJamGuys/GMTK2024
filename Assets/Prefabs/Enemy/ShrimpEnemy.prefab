@@ -120,7 +120,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.4569998
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2917473089558019762
 MonoBehaviour:
@@ -239,6 +239,7 @@ MonoBehaviour:
   <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 5
   <IsChasingGamer>k__BackingField: 1
+  <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField: []
 --- !u!1 &6654093448208159871
 GameObject:

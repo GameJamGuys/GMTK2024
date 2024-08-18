@@ -15,6 +15,7 @@ namespace Enemy
         [field:SerializeField] public float AttackSpeed {get; protected set;}
         [field:SerializeField] public float AttackDamage {get; protected set;}
         [field:SerializeField] public bool IsChasingGamer {get; protected set;}
+        [field:SerializeField] public float AgroRange {get; protected set;}
         
         [field:SerializeField] public List<EnemyResourcesConfig> EnemyResourcesConfigs {get; protected set;}
 
@@ -22,7 +23,7 @@ namespace Enemy
         public event Action<BaseEnemy> OnDie;
         
         protected BaseEnemyAttack BaseEnemyAttack;
-        private BaseEnemyTargets baseEnemyTargets;
+        protected BaseEnemyTargets BaseEnemyTargets;
 
         protected EnemyStateMachine StateMachine;
         // todo заменить на позицию башни
@@ -45,11 +46,12 @@ namespace Enemy
         {
             CurrentHealth = Health;
             BaseEnemyAttack = GetComponentInChildren<BaseEnemyAttack>();
-            baseEnemyTargets = GetComponentInChildren<BaseEnemyTargets>();
+            BaseEnemyTargets = GetComponentInChildren<BaseEnemyTargets>();
             Rigidbody = GetComponent<Rigidbody>();
             StateMachine = new EnemyStateMachine();
             StateMachine.Init();
             StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
+            BaseEnemyTargets.SetAttackRadius(AgroRange);
         }
 
         public void SpawnResources()
@@ -77,15 +79,15 @@ namespace Enemy
         private void OnEnable()
         {
             BaseEnemyAttack.OnTargetCollision += ChangeStateToAttack;
-            baseEnemyTargets.OnTargetEnter += TargetEnter;
-            baseEnemyTargets.OnTargetExit += TargetExit;
+            BaseEnemyTargets.OnTargetEnter += TargetEnter;
+            BaseEnemyTargets.OnTargetExit += TargetExit;
         }
 
         private void OnDisable()
         {
             BaseEnemyAttack.OnTargetCollision -= ChangeStateToAttack;
-            baseEnemyTargets.OnTargetEnter -= TargetEnter;
-            baseEnemyTargets.OnTargetExit -= TargetExit;
+            BaseEnemyTargets.OnTargetEnter -= TargetEnter;
+            BaseEnemyTargets.OnTargetExit -= TargetExit;
         }
 
         private void TargetEnter(Target target)
@@ -108,13 +110,13 @@ namespace Enemy
         {
             if (target == chaisingTarget)
             {
-                if (baseEnemyTargets.Targets.Count == 0)
+                if (BaseEnemyTargets.Targets.Count == 0)
                 {
-                    chaisingTarget = baseEnemyTargets.DefaultTarget;
+                    chaisingTarget = BaseEnemyTargets.DefaultTarget;
                 }
                 else
                 {
-                    chaisingTarget = baseEnemyTargets.Targets[^1];
+                    chaisingTarget = BaseEnemyTargets.Targets[^1];
                     StateMachine.Enter<EnemyMovementState, BaseEnemy>(this);
                 }
             }
@@ -146,7 +148,7 @@ namespace Enemy
         public void SetDefaultTarget(Target target)
         {
             chaisingTarget = target;
-            baseEnemyTargets.SetDefaultTarget(target);
+            BaseEnemyTargets.SetDefaultTarget(target);
         }
 
         private void ChangeStateToAttack(Target target)
