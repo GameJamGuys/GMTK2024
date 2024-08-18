@@ -5,6 +5,9 @@ using Damage;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+using DG.Tweening;
+using Cysharp.Threading.Tasks;
+
 namespace Enemy
 {
     [RequireComponent(typeof(Rigidbody))]
@@ -195,6 +198,25 @@ namespace Enemy
 
                 yield return null;
             }
+        }
+
+        public bool isDead = false;
+
+        public virtual void BeforeDead()
+        {
+            SpawnResources();
+        }
+
+        public async void EnemyDead()
+        {
+            if (isDead) return;
+            isDead = true;
+
+            BeforeDead();
+
+            await UniTask.Delay(100);
+
+            Destroy(gameObject);
         }
     }
 }
