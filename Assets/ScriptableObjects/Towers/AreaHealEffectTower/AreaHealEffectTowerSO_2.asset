@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 1000
   AreaScaleDuration: 0.1
-  AreaMaxScale: 20
+  AreaMaxScale: 30
   AreaScaleCooldown: 1.5
+  AreaDamage: 0
   AreaHeal: 24
+  BulletSpeed: 0
+  BulletAttackSpeed: 0
+  BulletDamage: 0

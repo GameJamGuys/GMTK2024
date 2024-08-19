@@ -1073,10 +1073,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1325900735940046259, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
-      propertyPath: _health
-      value: 
-      objectReference: {fileID: 4415944869833727009}
     - target: {fileID: 3636985713342638903, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1088,14 +1084,6 @@ PrefabInstance:
     - target: {fileID: 3953600734017861331, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
       propertyPath: m_Name
       value: UpgradeCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 58
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612111749236560303, guid: cc9d2051814bf471bb0d55ace4184122, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
