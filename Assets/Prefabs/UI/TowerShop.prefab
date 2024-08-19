@@ -199,9 +199,9 @@ MonoBehaviour:
   GameUI: {fileID: 0}
   pause: {fileID: 0}
   holder: {fileID: 8274406612988422975}
-  tabs: {fileID: 0}
-  attack: {fileID: 0}
-  support: {fileID: 0}
+  tabs: {fileID: 1637703463329004274}
+  attack: {fileID: 5272628210737332235}
+  support: {fileID: 8797727364715485863}
   isOpen: 0
   isBuild: 0
   towerCosts:

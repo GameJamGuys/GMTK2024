@@ -14,8 +14,9 @@ namespace TowerSystem
         [SerializeField] GameObject GameUI;
         [SerializeField] PauseMenu pause;
         [SerializeField] GameObject holder;
-        [Space]
+        
         [SerializeField] GameObject tabs, attack, support;
+        [Space]
 
         public bool isOpen;
         public bool isBuild = false;
