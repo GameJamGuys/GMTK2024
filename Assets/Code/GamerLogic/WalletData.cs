@@ -51,6 +51,9 @@ public static class WalletData
         attackResource = amount;
         buildResource = amount;
         supportResource = amount;
+        OnChangeWallet?.Invoke(Resource.Types.Attack);
+        OnChangeWallet?.Invoke(Resource.Types.Build);
+        OnChangeWallet?.Invoke(Resource.Types.Support);
     }
 
     public static void ResetData() => SetAllData(0);
