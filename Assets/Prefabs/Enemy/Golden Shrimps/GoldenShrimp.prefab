@@ -242,6 +242,7 @@ MonoBehaviour:
   <IsChasingGamer>k__BackingField: 1
   <AgroRange>k__BackingField: 10
   <EnemyResourcesConfigs>k__BackingField: []
+  boomPrefab: {fileID: 11818053788219641, guid: ea2d0b4faffa74304a9513ef563cc5d2, type: 3}
   isDead: 0
   chest: {fileID: 1798272452282348793, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
 --- !u!95 &7619118997918224912

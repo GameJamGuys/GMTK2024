@@ -218,7 +218,7 @@ namespace Enemy
 
             BeforeDead();
 
-            await UniTask.Delay(100);
+            await UniTask.Delay(150);
 
             Destroy(boomPrefab);
             Destroy(gameObject);
