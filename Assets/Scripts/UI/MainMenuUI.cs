@@ -22,7 +22,7 @@ public class MainMenuUI : MonoBehaviour
     {
         //playButton.onClick.AddListener(() => { Loader.Load(Loader.Scene.Gameplay); });
         //quitButton.onClick.AddListener(() => { Application.Quit(); });
-        startButton.onClick.AddListener(()=>{Loader.Load(Loader.Scene.CutScene);});
+        startButton.onClick.AddListener(()=>{Loader.Load(Loader.Scene.Gameplay);});
 
         Time.timeScale = 1f;
     }

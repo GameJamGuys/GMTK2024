@@ -72,6 +72,6 @@ public class SuperGodlyCutsceneClass : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         //Open next scene
-        Loader.Load(Loader.Scene.Gameplay);
+        Loader.Load(Loader.Scene.MainMenu);
     }
 }

@@ -12,6 +12,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest_W5
       objectReference: {fileID: 0}
+    - target: {fileID: 3067509669191286420, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067509669191286420, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067509669191286420, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232507151623750253, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232507151623750253, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232507151623750253, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6203809409037435270, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
       propertyPath: <EnemyResourcesConfigs>k__BackingField.Array.size
       value: 3
@@ -91,6 +115,18 @@ PrefabInstance:
     - target: {fileID: 8324507001573052716, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144975394573854043, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144975394573854043, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144975394573854043, guid: c16218d44f0374f8787a9948f59016cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

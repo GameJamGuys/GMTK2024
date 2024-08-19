@@ -11,6 +11,11 @@ public class PauseMenu : MonoBehaviour
     private bool isGamePaused = false;
 
     public void LoadMenu() => Loader.Load(Loader.Scene.MainMenu);
+    public void Restart()
+    {
+        SetResume();
+        Loader.Load(Loader.Scene.Gameplay);
+    }
 
     private void Update()
     {
@@ -21,6 +26,12 @@ public class PauseMenu : MonoBehaviour
     public void SetResume()
     {
         isGamePaused = true;
+        TogglePauseGame();
+    }
+
+    public void SetPause()
+    {
+        isGamePaused = false;
         TogglePauseGame();
     }
 

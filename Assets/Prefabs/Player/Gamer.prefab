@@ -286,6 +286,8 @@ MonoBehaviour:
   - {fileID: 2551789385059078838, guid: a5a125db1fef84f1d81a1ea09099e960, type: 3}
   - {fileID: 4644591038411446305, guid: edbefe3099403465397209bf4707488d, type: 3}
   - {fileID: 6789124476386060546, guid: 022ee246a1fbe4d8288cdea8cf833697, type: 3}
+  hintClose: {fileID: 0}
+  hintFar: {fileID: 0}
 --- !u!1001 &4929116913695054602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,6 +343,14 @@ PrefabInstance:
     - target: {fileID: 1405257925563544508, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952012155520643475, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952012155520643475, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3952012155520643475, guid: 11f7dc7072088401f86454707231f2d7, type: 3}
       propertyPath: m_LocalRotation.w

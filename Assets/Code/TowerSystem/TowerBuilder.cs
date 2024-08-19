@@ -65,7 +65,7 @@ namespace TowerSystem
         public async void ShowAndClose(GameObject closeObject)
         {
             closeObject.SetActive(true);
-            await UniTask.Delay(500);
+            await UniTask.Delay(800);
             closeObject.SetActive(false);
         }
 

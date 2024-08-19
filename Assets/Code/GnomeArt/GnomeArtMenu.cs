@@ -20,7 +20,7 @@ public class GnomeArtMenu : MonoBehaviour
 
     private void Start()
     {
-        pause.TogglePauseGame();
+        //pause.TogglePauseGame();
 
         bodyoutfit.image.sprite = bodyoutfit.bodyBuild[GnomeArtData.BODY];
         hatoutfit.image.sprite = hatoutfit.bodyBuild[GnomeArtData.HAT];
