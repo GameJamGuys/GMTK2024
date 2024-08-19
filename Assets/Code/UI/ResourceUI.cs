@@ -25,6 +25,7 @@ public class ResourceUI : MonoBehaviour
         if(changeType == type)
         {
             icon.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .1f);
+            print(WalletData.GetResourceCount(type).ToString());
             count.text = WalletData.GetResourceCount(type).ToString();
             icon.DOScale(new Vector3(1f, 1f, 1f), .1f);
         }

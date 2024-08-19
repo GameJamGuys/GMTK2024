@@ -8,12 +8,17 @@ public class TowerBuyButton : MonoBehaviour
 
     Button button;
 
+    
+
     private void OnEnable()
     {
         button = GetComponent<Button>();
-
-        button.interactable = TowerShop.Instance.CheckTowerCost(type);
         button.onClick.AddListener(BuyTower);
+    }
+
+    private void OnBecameVisible()
+    {
+        button.interactable = TowerShop.Instance.CheckTowerCost(type);
     }
 
     void BuyTower()

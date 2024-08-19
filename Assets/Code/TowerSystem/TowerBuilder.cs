@@ -15,12 +15,16 @@ namespace TowerSystem
         [Space]
         [SerializeField] GameObject hintClose, hintFar;
 
+        private bool isBuilding;
 
         public void BuildTower(TowerType type)
         {
             foreach(SideTower tower in sideTowers)
             {
-                if (tower.towerType == type) StartBuildTower(tower);
+                if (tower.towerType == type)
+                {
+                    StartBuildTower(tower);
+                }
             }
         }
 
@@ -71,6 +75,8 @@ namespace TowerSystem
 
         private async void StartBuildTower(SideTower towerPrefab)
         {
+            if (isBuilding) return;
+            isBuilding = true;
             player.enabled = false;
             visual.StartBuild();
             await UniTask.Delay(1000);
@@ -78,6 +84,7 @@ namespace TowerSystem
             TowerManager.Instance.AddTower(newTower);
             await UniTask.Delay(1000);
             player.enabled = true;
+            isBuilding = false;
         }
 
     }

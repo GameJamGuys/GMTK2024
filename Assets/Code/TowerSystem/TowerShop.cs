@@ -5,11 +5,11 @@ namespace TowerSystem
 {
     public class TowerShop : StaticInstance<TowerShop>
     {
-        public void BuildRange() => BuildTower(TowerType.Range);
-        public void BuildMelee() => BuildTower(TowerType.Melee);
-        public void BuildSupport() => BuildTower(TowerType.Support);
-        public void BuildMagnet() => BuildTower(TowerType.Magnet);
-        public void BuildHeal() => BuildTower(TowerType.Heal);
+        //public void BuildRange() => BuildTower(TowerType.Range);
+        //public void BuildMelee() => BuildTower(TowerType.Melee);
+        //public void BuildSupport() => BuildTower(TowerType.Support);
+        //public void BuildMagnet() => BuildTower(TowerType.Magnet);
+        //public void BuildHeal() => BuildTower(TowerType.Heal);
 
         [SerializeField] GameObject GameUI;
         [SerializeField] PauseMenu pause;
@@ -45,6 +45,7 @@ namespace TowerSystem
 
             foreach (ResCost resCost in cost.resources)
             {
+                print("Remove Res: " + resCost.type.ToString() + "," + resCost.amount.ToString());
                 WalletData.RemoveResource(resCost.type, resCost.amount);
             }
 

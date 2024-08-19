@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers: []
-  mainTower: {fileID: 0}
+  mainTower: {fileID: 2899651728468257780}
 --- !u!1001 &247910990118543734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +112,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fc5913916ebe4dacb064091a5425a07, type: 3}
+--- !u!114 &2899651728468257780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3120256052916701826, guid: 3fc5913916ebe4dacb064091a5425a07, type: 3}
+  m_PrefabInstance: {fileID: 247910990118543734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95896a643cc545c7a8ed1c88cb92cb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5492524155926652651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5713269288910768029, guid: 3fc5913916ebe4dacb064091a5425a07, type: 3}

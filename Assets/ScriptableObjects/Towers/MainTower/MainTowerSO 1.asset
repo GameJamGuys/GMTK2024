@@ -20,4 +20,4 @@ MonoBehaviour:
   AreaHeal: 0
   BulletSpeed: 0
   BulletAttackSpeed: 0.5
-  BulletDamage: 5
+  BulletDamage: 10
