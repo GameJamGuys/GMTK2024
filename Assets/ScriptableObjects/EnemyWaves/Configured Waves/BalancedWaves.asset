@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - Pulses:
-    - PulseCooldown: 20
+    - PulseCooldown: 3
       Enemies:
       - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
         Count: 15
