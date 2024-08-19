@@ -16,7 +16,5 @@ MonoBehaviour:
   - Pulses:
     - PulseCooldown: 5
       Enemies:
-      - EnemyPrefab: {fileID: 823990513373347442, guid: f3e819f20969a224ca33ee830f8c0beb, type: 3}
-        Count: 1
       - EnemyPrefab: {fileID: 7429098012566454289, guid: c1c2752fe3e65ed49b005f8dc3d0f3db, type: 3}
         Count: 1

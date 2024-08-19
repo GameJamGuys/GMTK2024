@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6786007549371979924, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786007549371979924, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8518868137853445521, guid: 24324cf7015f24991919de3e4cbf6263, type: 3}
       propertyPath: <BaseEffectTower>k__BackingField
       value: 
