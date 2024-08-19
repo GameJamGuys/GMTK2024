@@ -40,7 +40,7 @@ namespace Enemy
         {
             if (collider.gameObject.TryGetComponent(out Target target))
             {
-                Debug.Log(collider.gameObject.name);
+               // Debug.Log(collider.gameObject.name);
                 if (!Targets.Contains(target))
                 {
                     Targets.Add(target);

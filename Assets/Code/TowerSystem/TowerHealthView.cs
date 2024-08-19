@@ -17,7 +17,7 @@ namespace TowerSystem
         [SerializeField] private float _timerDuration;
 
         private Slider _slider;
-        private bool _isTimerOn;
+        private bool _isTimerOn = true;
         private float _timer;
 
         private void OnEnable()

@@ -13,11 +13,13 @@ namespace Enemy
         [SerializeField] private List<BaseEnemy> enemyPrefabs;
         
         private List<BaseEnemy> enemies = new();
+        [SerializeField]
         private List<Transform> points;
 
         private void Awake()
         {
             points = GetComponentsInChildren<Transform>().ToList();
+            points.Remove(this.transform);
         }
 
         private void Spawn()
