@@ -24,7 +24,7 @@ public class Harvester : MonoBehaviour
             throw new ArgumentNullException(nameof(_health));
         }
 
-        WalletData.SetAllData(0);
+        WalletData.SetAllData(1000);
 
         _colliderEventHandler.Collided += OnCollided;
     }
