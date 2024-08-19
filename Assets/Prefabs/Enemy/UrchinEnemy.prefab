@@ -338,6 +338,7 @@ MonoBehaviour:
   - ResourcePrefab: {fileID: 1789143261321231284, guid: cb301959169138d4e922e850dbb105fe, type: 3}
     ResourceCount: 0
     Chance: 0.3
+  boomPrefab: {fileID: 11818053788219641, guid: ea2d0b4faffa74304a9513ef563cc5d2, type: 3}
   isDead: 0
 --- !u!95 &359646718930926403
 Animator:

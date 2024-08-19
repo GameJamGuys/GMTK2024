@@ -1974,6 +1974,10 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 1899447320592794571, guid: f8e30d6fc5d2fea409e3ce720b77e226, type: 3}
+      propertyPath: collisionLayerMask.m_Bits
+      value: 2231
+      objectReference: {fileID: 0}
     - target: {fileID: 1947340482789521329, guid: f8e30d6fc5d2fea409e3ce720b77e226, type: 3}
       propertyPath: m_fontSize
       value: 80

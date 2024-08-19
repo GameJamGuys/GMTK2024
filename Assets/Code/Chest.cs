@@ -23,7 +23,8 @@ public class Chest : MonoBehaviour
         {
             if (config.Chance >= Random.Range(0, 1))
             {
-                Instantiate(config.ResourcePrefab, transform.position, Quaternion.identity).SetCount(config.ResourceCount);
+                Vector3 randPos = new Vector3(Random.Range(-3, 3), 0, Random.Range(-2, 2));
+                Instantiate(config.ResourcePrefab, transform.position + randPos, Quaternion.identity).SetCount(config.ResourceCount);
             }
         }
 

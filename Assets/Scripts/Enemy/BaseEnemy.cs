@@ -21,6 +21,8 @@ namespace Enemy
         [field:SerializeField] public float AgroRange {get; protected set;}
         
         [field:SerializeField] public List<EnemyResourcesConfig> EnemyResourcesConfigs {get; protected set;}
+        [Space]
+        [SerializeField] GameObject boomPrefab;
 
         public float CurrentHealth {get; protected set;}
         public event Action<BaseEnemy> OnDie;
@@ -205,6 +207,7 @@ namespace Enemy
 
         public virtual void BeforeDead()
         {
+            boomPrefab = Instantiate(boomPrefab, transform.position, Quaternion.identity);
             SpawnResources();
         }
 
@@ -217,6 +220,7 @@ namespace Enemy
 
             await UniTask.Delay(100);
 
+            Destroy(boomPrefab);
             Destroy(gameObject);
         }
     }

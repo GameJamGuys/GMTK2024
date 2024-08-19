@@ -143,9 +143,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5512277712661831859}
+  - component: {fileID: 823990513373347442}
   - component: {fileID: 1332243476032748301}
   - component: {fileID: 591647872387883870}
-  - component: {fileID: 823990513373347442}
   m_Layer: 6
   m_Name: ShrimpEnemy
   m_TagString: Untagged
@@ -172,6 +172,36 @@ Transform:
   - {fileID: 7698427043265654848}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823990513373347442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441038293120242248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615bd1348e54cc094403f574b799402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Health>k__BackingField: 8
+  <Speed>k__BackingField: 2
+  <AttackSpeed>k__BackingField: 1
+  <AttackDamage>k__BackingField: 5
+  <IsChasingGamer>k__BackingField: 1
+  <AgroRange>k__BackingField: 10
+  <EnemyResourcesConfigs>k__BackingField:
+  - ResourcePrefab: {fileID: 2917310794537958685, guid: 98ea4f25ada139040b221146a2f32540, type: 3}
+    ResourceCount: 5
+    Chance: 0.4
+  - ResourcePrefab: {fileID: 8291094588202735412, guid: fef321c8e5fcefa4785ffb0fc4b4b33a, type: 3}
+    ResourceCount: 3
+    Chance: 0.3
+  - ResourcePrefab: {fileID: 1789143261321231284, guid: cb301959169138d4e922e850dbb105fe, type: 3}
+    ResourceCount: 5
+    Chance: 0.3
+  boomPrefab: {fileID: 11818053788219641, guid: ea2d0b4faffa74304a9513ef563cc5d2, type: 3}
+  isDead: 0
 --- !u!136 &1332243476032748301
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -222,35 +252,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &823990513373347442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6441038293120242248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3615bd1348e54cc094403f574b799402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Health>k__BackingField: 8
-  <Speed>k__BackingField: 2
-  <AttackSpeed>k__BackingField: 1
-  <AttackDamage>k__BackingField: 5
-  <IsChasingGamer>k__BackingField: 1
-  <AgroRange>k__BackingField: 10
-  <EnemyResourcesConfigs>k__BackingField:
-  - ResourcePrefab: {fileID: 2917310794537958685, guid: 98ea4f25ada139040b221146a2f32540, type: 3}
-    ResourceCount: 5
-    Chance: 0.4
-  - ResourcePrefab: {fileID: 8291094588202735412, guid: fef321c8e5fcefa4785ffb0fc4b4b33a, type: 3}
-    ResourceCount: 3
-    Chance: 0.3
-  - ResourcePrefab: {fileID: 1789143261321231284, guid: cb301959169138d4e922e850dbb105fe, type: 3}
-    ResourceCount: 5
-    Chance: 0.3
-  isDead: 0
 --- !u!1 &6654093448208159871
 GameObject:
   m_ObjectHideFlags: 0
