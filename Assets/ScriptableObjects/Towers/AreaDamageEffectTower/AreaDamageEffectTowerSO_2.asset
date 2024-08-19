@@ -16,7 +16,7 @@ MonoBehaviour:
   AreaScaleDuration: 0.2
   AreaMaxScale: 30
   AreaScaleCooldown: 1.5
-  AreaDamage: 6
+  AreaDamage: 8
   AreaHeal: 0
   BulletSpeed: 0
   BulletAttackSpeed: 0
