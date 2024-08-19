@@ -31,6 +31,11 @@ public class PlayerInputRouter : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
 
+    public void DisableInputSystem()
+    {
+        playerInputActions.Disable();
+    }
+
 
     private void Awake()
     {

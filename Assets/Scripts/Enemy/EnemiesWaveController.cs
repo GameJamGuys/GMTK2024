@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Enemy
     {
         [SerializeField] private EnemiesWavesSO wavesConfig;
         [SerializeField] private EnemySpawner enemySpawner;
+
+        public event Action OnWavesEnded;
         
         private Coroutine coroutine;
 
@@ -33,6 +36,8 @@ namespace Enemy
             {
                 foreach (WavePulse pulse in wave.Pulses)
                 {
+                    yield return new WaitForSeconds(pulse.PulseCooldown);
+
                     foreach (WavePulseEnemy wavePulseEnemy in pulse.Enemies)
                     {
                         for (int i = 0; i < wavePulseEnemy.Count; i++)
@@ -40,10 +45,9 @@ namespace Enemy
                             enemySpawner.Spawn(wavePulseEnemy.EnemyPrefab, enemySpawner.GetRandomSpawnPosition());
                         }
                     }
-                    
-                    yield return new WaitForSeconds(pulse.PulseCooldown);
                 }
             }
+            OnWavesEnded?.Invoke();
         }
     }
 }
