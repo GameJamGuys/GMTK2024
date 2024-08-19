@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 1000
   AreaScaleDuration: 0.2
-  AreaMaxScale: 20
+  AreaMaxScale: 30
   AreaScaleCooldown: 1.5
   AreaDamage: 6
   AreaHeal: 0
