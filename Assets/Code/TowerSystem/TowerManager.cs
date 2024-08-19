@@ -24,6 +24,7 @@ namespace TowerSystem
         public MainTower mainTower;
 
         public event Action<int> OnNewTower;
+        public event Action OnMainTowerDie;
 
         public int TowersCount => towers.Count;
 
@@ -60,6 +61,11 @@ namespace TowerSystem
             tower.OnDie -= TowerDie;
             towers.Remove(tower);
             Destroy(tower.gameObject);
+
+            if (tower is MainTower)
+            {
+                OnMainTowerDie?.Invoke();
+            }
         }
     }
 

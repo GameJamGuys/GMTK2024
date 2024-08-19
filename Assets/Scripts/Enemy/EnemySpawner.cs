@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Damage;
@@ -11,6 +12,10 @@ namespace Enemy
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private List<BaseEnemy> enemyPrefabs;
+
+        public event Action OnEnemyDied;
+
+        public bool HasEnemies => enemies.Count > 0;
         
         private List<BaseEnemy> enemies = new();
         [SerializeField]
@@ -42,6 +47,14 @@ namespace Enemy
             enemies.Add(enemy);
         }
 
+        public void DisableAllEnemies()
+        {
+            foreach (BaseEnemy enemy in enemies)
+            {
+                enemy.gameObject.SetActive(false);
+            }
+        }
+
         private void Update()
         {
             // todo для теста
@@ -57,6 +70,7 @@ namespace Enemy
             
             enemies.Remove(enemy);
             enemy.EnemyDead();
+            OnEnemyDied?.Invoke();
         }
     }
 }
