@@ -14,6 +14,8 @@ namespace TowerSystem
         [SerializeField] GameObject GameUI;
         [SerializeField] PauseMenu pause;
         [SerializeField] GameObject holder;
+        [Space]
+        [SerializeField] GameObject tabs, attack, support;
 
         public bool isOpen;
         public bool isBuild = false;
@@ -67,8 +69,13 @@ namespace TowerSystem
         public void CloseShop()
         {
             isOpen = false;
+            tabs.SetActive(true);
+            attack.SetActive(false);
+            support.SetActive(false);
+
             holder.SetActive(false);
             GameUI.SetActive(true);
+            
             pause.SetResume();
         }
 
