@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b621ed23f65b46e6b275c9cd1d79132c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceStopDistance: 5
+  resourceStopDistance: 3
   resourceSpeed: 3
