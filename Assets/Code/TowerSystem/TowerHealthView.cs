@@ -61,8 +61,9 @@ namespace TowerSystem
 
         public void OnHealthChanged(float newValue)
         {
-            _canvasGroup.DOFade(FadeInValue, _fadeDuration);
-            _slider.DOValue(newValue, _changeDuration);
+            if(_canvasGroup)
+                _canvasGroup.DOFade(FadeInValue, _fadeDuration);
+            _slider.value = newValue;
             _isTimerOn = true;
             _timer = _timerDuration;
         }
